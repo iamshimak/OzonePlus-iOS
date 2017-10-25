@@ -14,6 +14,7 @@
 		C0A2B40C1F98A7CC0022D66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */; };
 		C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B4131F98A8F30022D66C /* LoginViewController.swift */; };
 		C0B38F211FA06146009778B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B38F201FA06146009778B7 /* GoogleService-Info.plist */; };
+		C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F231FA06801009778B7 /* SigninManager.swift */; };
 		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		C0A2B40D1F98A7CC0022D66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0A2B4131F98A8F30022D66C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C0B38F201FA06146009778B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0B38F231FA06801009778B7 /* SigninManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninManager.swift; sourceTree = "<group>"; };
 		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +84,7 @@
 		C0A2B3FD1F98A7CC0022D66C /* OzonePlus */ = {
 			isa = PBXGroup;
 			children = (
-				C0B38F1F1F9F62BC009778B7 /* Models */,
+				C0B38F221FA067C1009778B7 /* OzoneSDK */,
 				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
 				C0A2B4021F98A7CC0022D66C /* Main.storyboard */,
 				C0A2B4081F98A7CC0022D66C /* Assets.xcassets */,
@@ -95,11 +97,12 @@
 			path = OzonePlus;
 			sourceTree = "<group>";
 		};
-		C0B38F1F1F9F62BC009778B7 /* Models */ = {
+		C0B38F221FA067C1009778B7 /* OzoneSDK */ = {
 			isa = PBXGroup;
 			children = (
+				C0B38F231FA06801009778B7 /* SigninManager.swift */,
 			);
-			name = Models;
+			path = OzoneSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +200,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -204,6 +208,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
+				C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
 				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
 			);

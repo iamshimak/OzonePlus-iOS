@@ -7,6 +7,8 @@ target 'OzonePlus' do
 
   pod 'NVActivityIndicatorView'
   pod 'AFNetworking', '~> 3.0'
+  
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end

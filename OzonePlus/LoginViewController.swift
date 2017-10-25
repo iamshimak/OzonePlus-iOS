@@ -31,7 +31,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private var signInCredentials: NSDictionary!
     
     @IBAction func loginAction(_ sender: Any) {
-        NSLog("Button Pressed")
+        NSLog("LOGIN BEGIN")
+        
+        let signinManager = SigninManager()
+        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
+        
+        signinManager.signinUser(signinUser: user) { (res, error) in
+            if let error = error {
+                NSLog(error.description)
+            } else {
+                NSLog(res!)
+            }
+        }
+            
     }
     
     override func viewDidLoad() {
