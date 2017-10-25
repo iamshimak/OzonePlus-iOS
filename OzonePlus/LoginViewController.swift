@@ -30,22 +30,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private var isKeyBoardShown = false
     private var signInCredentials: NSDictionary!
     
-    @IBAction func loginAction(_ sender: Any) {
-        NSLog("LOGIN BEGIN")
-        
-        let signinManager = SigninManager()
-        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
-        
-        signinManager.signinUser(signinUser: user) { (res, error) in
-            if let error = error {
-                NSLog(error.description)
-            } else {
-                NSLog(res!)
-            }
-        }
-            
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,6 +62,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+    }
+    
+    @IBAction func loginAction(_ sender: Any) {
+        dismissKeyboard()
+        
+        let signinManager = SigninManager()
+        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
+        
+        Utill.displayActivityIndicatorForView(vc: self)
+        
+        signinManager.signinUser(signinUser: user) { (res, error) in
+            
+            Utill.removeActivityIndicator()
+            
+            if let error = error {
+                NSLog(error.description)
+            } else {
+                NSLog(res!)
+            }
+        }
+        
     }
     
     // MARK: - TextField Delegates
