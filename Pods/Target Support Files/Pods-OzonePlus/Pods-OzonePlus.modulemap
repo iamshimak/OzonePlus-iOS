@@ -1,0 +1,6 @@
+framework module Pods_OzonePlus {
+  umbrella header "Pods-OzonePlus-umbrella.h"
+
+  export *
+  module * { export * }
+}

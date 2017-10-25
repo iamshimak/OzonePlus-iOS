@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */; };
+		C0A2B4041F98A7CC0022D66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A2B4021F98A7CC0022D66C /* Main.storyboard */; };
+		C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */; };
+		C0A2B4091F98A7CC0022D66C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A2B4081F98A7CC0022D66C /* Assets.xcassets */; };
+		C0A2B40C1F98A7CC0022D66C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */; };
+		C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B4131F98A8F30022D66C /* LoginViewController.swift */; };
+		C0B38F211FA06146009778B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B38F201FA06146009778B7 /* GoogleService-Info.plist */; };
+		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.debug.xcconfig"; sourceTree = "<group>"; };
+		A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OzonePlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzonePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C0A2B4031F98A7CC0022D66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0A2B4061F98A7CC0022D66C /* OzonePlus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OzonePlus.xcdatamodel; sourceTree = "<group>"; };
+		C0A2B4081F98A7CC0022D66C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C0A2B40B1F98A7CC0022D66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C0A2B40D1F98A7CC0022D66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A2B4131F98A8F30022D66C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0B38F201FA06146009778B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0A2B3F81F98A7CC0022D66C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A7AC7271F4B2F7AEAB8D409 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */,
+				D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AE30F352BC8F231A8E0D5BDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0A2B3F21F98A7CC0022D66C = {
+			isa = PBXGroup;
+			children = (
+				C0A2B3FD1F98A7CC0022D66C /* OzonePlus */,
+				C0A2B3FC1F98A7CC0022D66C /* Products */,
+				4A7AC7271F4B2F7AEAB8D409 /* Pods */,
+				AE30F352BC8F231A8E0D5BDC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C0A2B3FC1F98A7CC0022D66C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0A2B3FD1F98A7CC0022D66C /* OzonePlus */ = {
+			isa = PBXGroup;
+			children = (
+				C0B38F1F1F9F62BC009778B7 /* Models */,
+				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
+				C0A2B4021F98A7CC0022D66C /* Main.storyboard */,
+				C0A2B4081F98A7CC0022D66C /* Assets.xcassets */,
+				C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */,
+				C0A2B4131F98A8F30022D66C /* LoginViewController.swift */,
+				C0B38F201FA06146009778B7 /* GoogleService-Info.plist */,
+				C0A2B40D1F98A7CC0022D66C /* Info.plist */,
+				C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */,
+			);
+			path = OzonePlus;
+			sourceTree = "<group>";
+		};
+		C0B38F1F1F9F62BC009778B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C0A2B3FA1F98A7CC0022D66C /* OzonePlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A2B4101F98A7CC0022D66C /* Build configuration list for PBXNativeTarget "OzonePlus" */;
+			buildPhases = (
+				E93AC8C96F4BFCD27CFB2E7D /* [CP] Check Pods Manifest.lock */,
+				C0A2B3F71F98A7CC0022D66C /* Sources */,
+				C0A2B3F81F98A7CC0022D66C /* Frameworks */,
+				C0A2B3F91F98A7CC0022D66C /* Resources */,
+				513FFA76F7024BDCD5B27FE6 /* [CP] Embed Pods Frameworks */,
+				2C199D1637CA332EDCA9C966 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OzonePlus;
+			productName = OzonePlus;
+			productReference = C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0A2B3F31F98A7CC0022D66C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Ahamed Shimak";
+				TargetAttributes = {
+					C0A2B3FA1F98A7CC0022D66C = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C0A2B3F61F98A7CC0022D66C /* Build configuration list for PBXProject "OzonePlus" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C0A2B3F21F98A7CC0022D66C;
+			productRefGroup = C0A2B3FC1F98A7CC0022D66C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C0A2B3FA1F98A7CC0022D66C /* OzonePlus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A2B3F91F98A7CC0022D66C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A2B40C1F98A7CC0022D66C /* LaunchScreen.storyboard in Resources */,
+				C0B38F211FA06146009778B7 /* GoogleService-Info.plist in Resources */,
+				C0A2B4091F98A7CC0022D66C /* Assets.xcassets in Resources */,
+				C0A2B4041F98A7CC0022D66C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C199D1637CA332EDCA9C966 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		513FFA76F7024BDCD5B27FE6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E93AC8C96F4BFCD27CFB2E7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OzonePlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C0A2B3F71F98A7CC0022D66C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
+				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
+				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C0A2B4021F98A7CC0022D66C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A2B4031F98A7CC0022D66C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0A2B40B1F98A7CC0022D66C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C0A2B40E1F98A7CC0022D66C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C0A2B40F1F98A7CC0022D66C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0A2B4111F98A7CC0022D66C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				INFOPLIST_FILE = OzonePlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C0A2B4121F98A7CC0022D66C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				INFOPLIST_FILE = OzonePlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C0A2B3F61F98A7CC0022D66C /* Build configuration list for PBXProject "OzonePlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A2B40E1F98A7CC0022D66C /* Debug */,
+				C0A2B40F1F98A7CC0022D66C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C0A2B4101F98A7CC0022D66C /* Build configuration list for PBXNativeTarget "OzonePlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A2B4111F98A7CC0022D66C /* Debug */,
+				C0A2B4121F98A7CC0022D66C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C0A2B4061F98A7CC0022D66C /* OzonePlus.xcdatamodel */,
+			);
+			currentVersion = C0A2B4061F98A7CC0022D66C /* OzonePlus.xcdatamodel */;
+			path = OzonePlus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C0A2B3F31F98A7CC0022D66C /* Project object */;
+}
