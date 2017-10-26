@@ -42,16 +42,23 @@ class Utill: NSObject {
         
         ActivityIndicatorProps.activityIndicator.stopAnimating()
         ActivityIndicatorProps.bluredView.removeFromSuperview()
+        ActivityIndicatorProps = nil
     }
     
     static func addBlurView(_ inView : UIView) -> UIVisualEffectView {
-        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffect : UIBlurEffect
+        
+        if #available(iOS 10.0, *) {
+            blurEffect = UIBlurEffect(style: .regular)
+        } else {
+            blurEffect = UIBlurEffect(style: .light)
+        }
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
         //always fill the view
         blurEffectView.frame = inView.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0.7
+        blurEffectView.alpha = 0.6
         
         return blurEffectView
     }
