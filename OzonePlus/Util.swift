@@ -15,7 +15,7 @@ private struct ActivityIndicatorProperties {
     let bluredView : UIView!
 }
 
-class Utill: NSObject {
+class Util: NSObject {
     private static var ActivityIndicatorProps : ActivityIndicatorProperties!
     
     static func displayActivityIndicatorForView(vc: UIViewController) {
