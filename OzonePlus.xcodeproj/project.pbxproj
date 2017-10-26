@@ -16,7 +16,7 @@
 		C0B38F211FA06146009778B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0B38F201FA06146009778B7 /* GoogleService-Info.plist */; };
 		C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F231FA06801009778B7 /* SigninManager.swift */; };
 		C0B38F281FA0891C009778B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F271FA0891C009778B7 /* User.swift */; };
-		C0B38F2A1FA09AA0009778B7 /* Utill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F291FA09AA0009778B7 /* Utill.swift */; };
+		C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F291FA09AA0009778B7 /* Util.swift */; };
 		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		C0B38F201FA06146009778B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0B38F231FA06801009778B7 /* SigninManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninManager.swift; sourceTree = "<group>"; };
 		C0B38F271FA0891C009778B7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		C0B38F291FA09AA0009778B7 /* Utill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utill.swift; sourceTree = "<group>"; };
+		C0B38F291FA09AA0009778B7 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +97,7 @@
 				C0A2B4131F98A8F30022D66C /* LoginViewController.swift */,
 				C0B38F201FA06146009778B7 /* GoogleService-Info.plist */,
 				C0A2B40D1F98A7CC0022D66C /* Info.plist */,
-				C0B38F291FA09AA0009778B7 /* Utill.swift */,
+				C0B38F291FA09AA0009778B7 /* Util.swift */,
 				C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */,
 			);
 			path = OzonePlus;
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0B38F2A1FA09AA0009778B7 /* Utill.swift in Sources */,
+				C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */,
 				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
 				C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,

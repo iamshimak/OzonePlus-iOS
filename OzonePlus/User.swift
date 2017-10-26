@@ -9,18 +9,8 @@
 import UIKit
 
 class User: NSObject {
-    
-    private var firstName : String!
-    private var lastName : String!
-    private var userName : String!
-    private var email : String!
-    
-    static let sharedInstance: User = {
-        let instance = User()
-        return instance
-    }()
-    
-    override init() {
-        super.init()
-    }
+    var firstName : String!
+    var lastName : String!
+    var userName : String!
+    var email : String!
 }

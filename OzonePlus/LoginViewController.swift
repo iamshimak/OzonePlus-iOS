@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -70,11 +71,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let signinManager = SigninManager()
         let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
         
-        Utill.displayActivityIndicatorForView(vc: self)
+        Util.displayActivityIndicator()
         
         signinManager.signinUser(signinUser: user) { (res, error) in
             
-            Utill.removeActivityIndicator()
+            Util.removeActivityIndicator()
             
             if let error = error {
                 NSLog(error.description)
@@ -82,6 +83,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 NSLog(res!)
             }
         }
+    }
+    
+    @IBAction func signupAction(_ sender: Any) {
+        dismissKeyboard()
+        
         
     }
     
@@ -175,6 +181,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func initializeAppSettings () {
         loginButton.setTitleColor(UIColor.lightGray, for: .disabled)
+        loginButton.layer.cornerRadius = 5
+        
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = UIColor.flatSkyBlue.cgColor
+        signUpButton.layer.cornerRadius = 5
     }
     
     
