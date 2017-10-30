@@ -8,8 +8,9 @@ target 'OzonePlus' do
   pod 'NVActivityIndicatorView'
   pod 'AFNetworking', '~> 3.0'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-  
+
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 
 end

@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import GoogleSignIn
 import ChameleonFramework
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var shrinkableLogoView: UIView!
     
@@ -71,6 +72,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let signinManager = SigninManager()
         let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
         
+        // var signInButton: GIDSignInButton!
+        
         Util.displayActivityIndicator()
         
         signinManager.signinUser(signinUser: user) { (res, error) in
@@ -83,12 +86,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 NSLog(res!)
             }
         }
+        
     }
     
     @IBAction func signupAction(_ sender: Any) {
         dismissKeyboard()
         
+        let actionSheet = UIAlertController.init(title: "Signup With", message: nil, preferredStyle: .actionSheet)
         
+        let gmailAction = UIAlertAction.init(title: "Continue With Gmail", style: .default, handler:{ action in
+            GIDSignIn.sharedInstance().uiDelegate = self
+            GIDSignIn.sharedInstance().signIn()
+        })
+        
+        actionSheet.addAction(gmailAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        NSLog("%@", signIn)
     }
     
     // MARK: - TextField Delegates
@@ -175,8 +192,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyBoardHeightFromNotification(notification: NSNotification) -> CGFloat {
-        let userInfo = notification.userInfo
-        return (userInfo![UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue.size.height
+        if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            return keyboardFrame.cgRectValue.height
+        } else {
+            return 216.0
+        }
     }
     
     func initializeAppSettings () {

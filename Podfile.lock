@@ -36,6 +36,11 @@ PODS:
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseInstanceID (2.0.4)
+  - GoogleSignIn (4.1.0):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -46,7 +51,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMOAuth2 (1.1.5):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.12):
+    - GTMSessionFetcher/Full (= 1.1.12)
   - GTMSessionFetcher/Core (1.1.12)
+  - GTMSessionFetcher/Full (1.1.12):
+    - GTMSessionFetcher/Core (= 1.1.12)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -61,6 +72,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Firebase/Auth
   - Firebase/Core
+  - GoogleSignIn
   - NVActivityIndicatorView
 
 EXTERNAL SOURCES:
@@ -80,11 +92,13 @@ SPEC CHECKSUMS:
   FirebaseAuth: d7f047fbeab98062b98ea933b8d934e0fb1190e2
   FirebaseCore: 69b1a5ac5f857ba6d5fd9d5fe794f4786dd5e579
   FirebaseInstanceID: 70c2b877e9338971b2429ea5a4293df6961aa44e
+  GoogleSignIn: 8c599fc10d25b2af86a3f82fd9631e863f2b1400
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
 
-PODFILE CHECKSUM: 45ce59279aa2cbb66052deb8399bb08c5993d5a2
+PODFILE CHECKSUM: 521a453da5756114eeb91f4372c1730ebe7cceb9
 
 COCOAPODS: 1.3.1
