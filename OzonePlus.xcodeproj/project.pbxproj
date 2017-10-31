@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C010A7B41FA84089000080C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010A7B31FA84089000080C2 /* ProfileViewController.swift */; };
+		C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */; };
+		C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */; };
+		C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83D1FA704BF00168CDA /* UserViewModel.swift */; };
+		C01CF8401FA7053300168CDA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83F1FA7053300168CDA /* UserManager.swift */; };
+		C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */; };
+		C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */; };
+		C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04729821FA74C8900E5B0F7 /* SignupManager.swift */; };
 		C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */; };
 		C0A2B4041F98A7CC0022D66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0A2B4021F98A7CC0022D66C /* Main.storyboard */; };
 		C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */; };
@@ -23,6 +31,14 @@
 /* Begin PBXFileReference section */
 		7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OzonePlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C010A7B31FA84089000080C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
+		C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionTableViewController.swift; sourceTree = "<group>"; };
+		C01CF83D1FA704BF00168CDA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		C01CF83F1FA7053300168CDA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
+		C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
+		C04729821FA74C8900E5B0F7 /* SignupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupManager.swift; sourceTree = "<group>"; };
 		C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzonePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0A2B4031F98A7CC0022D66C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +83,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C010A7EF1FA86FB6000080C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C010A7F21FA87183000080C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C01CF83D1FA704BF00168CDA /* UserViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C0A2B3F21F98A7CC0022D66C = {
 			isa = PBXGroup;
 			children = (
@@ -88,16 +120,23 @@
 		C0A2B3FD1F98A7CC0022D66C /* OzonePlus */ = {
 			isa = PBXGroup;
 			children = (
+				C010A7F21FA87183000080C2 /* ViewModels */,
+				C010A7EF1FA86FB6000080C2 /* Extensions */,
 				C0B38F221FA067C1009778B7 /* OzoneSDK */,
 				C0B38F261FA088ED009778B7 /* Models */,
 				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
+				C01CF83F1FA7053300168CDA /* UserManager.swift */,
 				C0A2B4021F98A7CC0022D66C /* Main.storyboard */,
 				C0A2B4081F98A7CC0022D66C /* Assets.xcassets */,
 				C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */,
 				C0A2B4131F98A8F30022D66C /* LoginViewController.swift */,
+				C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */,
 				C0B38F201FA06146009778B7 /* GoogleService-Info.plist */,
+				C010A7B31FA84089000080C2 /* ProfileViewController.swift */,
 				C0A2B40D1F98A7CC0022D66C /* Info.plist */,
 				C0B38F291FA09AA0009778B7 /* Util.swift */,
+				C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */,
+				C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */,
 				C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */,
 			);
 			path = OzonePlus;
@@ -107,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B38F231FA06801009778B7 /* SigninManager.swift */,
+				C04729821FA74C8900E5B0F7 /* SignupManager.swift */,
 			);
 			path = OzoneSDK;
 			sourceTree = "<group>";
@@ -264,12 +304,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01CF8401FA7053300168CDA /* UserManager.swift in Sources */,
 				C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */,
+				C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */,
 				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
 				C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
+				C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */,
+				C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */,
 				C0B38F281FA0891C009778B7 /* User.swift in Sources */,
+				C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */,
+				C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */,
+				C010A7B41FA84089000080C2 /* ProfileViewController.swift in Sources */,
 				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
+				C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

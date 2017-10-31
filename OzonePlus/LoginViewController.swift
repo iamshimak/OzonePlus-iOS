@@ -10,7 +10,7 @@ import UIKit
 import GoogleSignIn
 import ChameleonFramework
 
-class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate, GIDSignInUIDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet weak var shrinkableLogoView: UIView!
     
@@ -31,6 +31,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     private var isTextFieldSelected = false
     private var isKeyBoardShown = false
     private var signInCredentials: NSDictionary!
+    
+    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,8 +74,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
         let signinManager = SigninManager()
         let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
         
-        // var signInButton: GIDSignInButton!
-        
         Util.displayActivityIndicator()
         
         signinManager.signinUser(signinUser: user) { (res, error) in
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
             if let error = error {
                 NSLog(error.description)
             } else {
-                NSLog(res!)
+                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
             }
         }
         
@@ -91,21 +91,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     
     @IBAction func signupAction(_ sender: Any) {
         dismissKeyboard()
-        
-        let actionSheet = UIAlertController.init(title: "Signup With", message: nil, preferredStyle: .actionSheet)
-        
-        let gmailAction = UIAlertAction.init(title: "Continue With Gmail", style: .default, handler:{ action in
-            GIDSignIn.sharedInstance().uiDelegate = self
-            GIDSignIn.sharedInstance().signIn()
-        })
-        
-        actionSheet.addAction(gmailAction)
-        
-        present(actionSheet, animated: true, completion: nil)
     }
     
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        NSLog("%@", signIn)
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        NSLog("%@", user.profile)
+    }
+    
+    // Finished disconnecting |user| from the app successfully if |error| is |nil|.
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
     }
     
     // MARK: - TextField Delegates
@@ -200,6 +194,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     }
     
     func initializeAppSettings () {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
         loginButton.setTitleColor(UIColor.lightGray, for: .disabled)
         loginButton.layer.cornerRadius = 5
         
@@ -208,15 +204,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
         signUpButton.layer.cornerRadius = 5
     }
     
+    // MARK: - Navigation
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if let controller = segue.destination as? SigninOptionTableViewController {
+            slideInTransitioningDelegate.direction = .bottom
+            controller.transitioningDelegate = slideInTransitioningDelegate
+            controller.modalPresentationStyle = .custom
+        }
+    }
 }

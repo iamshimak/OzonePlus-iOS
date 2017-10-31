@@ -11,6 +11,8 @@ import NVActivityIndicatorView
 
 class Util: NSObject {
     
+    static let dimViewIdentifier = 22222
+    
     static func displayActivityIndicator() {
         let window : UIView = (UIApplication.shared.delegate?.window!)!
         displayActivityIndicatorForView(view: window)
@@ -22,69 +24,44 @@ class Util: NSObject {
         
         let activityIndicator = NVActivityIndicatorView(frame: viewFrame, type: .ballPulse, color: UIColor.white, padding: NVActivityIndicatorView.DEFAULT_PADDING);
         activityIndicator.center = center
-
-        let bluredView = addBlurView(view)
-        
         activityIndicator.startAnimating()
         
-        view.addSubview(bluredView)
+        view.addSubview(addBlurView(view))
         view.addSubview(activityIndicator)
     }
     
-    private static func addBlurView(_ inView : UIView) -> UIVisualEffectView {
-        let blurEffect : UIBlurEffect
+    private static func addBlurView(_ inView : UIView) -> UIView {
+        let bluredView = UIView()
         
-        if #available(iOS 10.0, *) {
-            blurEffect = UIBlurEffect(style: .regular)
-        } else {
-            blurEffect = UIBlurEffect(style: .light)
-        }
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        bluredView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        //bluredView.alpha = 0.0
+        bluredView.frame = inView.bounds
+        bluredView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        bluredView.tag = dimViewIdentifier
         
-        blurEffectView.frame = inView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView.alpha = 0.6
-        
-        return blurEffectView
+        return bluredView
     }
     
     static func removeActivityIndicator() {
         let window : UIView = (UIApplication.shared.delegate?.window!)!
-        removeActivityIndicator(forView: window)
+        
+        removeIndicator(forView: window)
+        removeDimView(view: window)
     }
     
-    static func removeActivityIndicator(forView: UIView) {
-        let indicator = indicatorForView(view: forView)
-        let bluredView = bluredViewForView(view: forView)
+    private static func removeIndicator(forView: UIView) {
+        let subviews = forView.subviews.reversed()
         
-        if indicator != nil {
-            indicator?.stopAnimating()
-        }
-        
-        if bluredView != nil {
-            bluredView?.removeFromSuperview()
+        if let i = subviews.index(where: { $0.isKind(of: NVActivityIndicatorView.classForCoder()) }) {
+            (subviews[i] as! NVActivityIndicatorView).stopAnimating()
         }
     }
     
-    private static func indicatorForView(view: UIView) -> NVActivityIndicatorView? {
+    private static func removeDimView(view: UIView) {
         let subviews = view.subviews.reversed()
-        for view in subviews {
-            if view.isKind(of: NVActivityIndicatorView.classForCoder()) {
-                return view as? NVActivityIndicatorView
-            }
-        }
         
-        return nil
-    }
-    
-    private static func bluredViewForView(view: UIView) ->  UIVisualEffectView? {
-        let subviews = view.subviews.reversed()
-        for view in subviews {
-            if view.isKind(of: UIVisualEffectView.classForCoder()) {
-                return view as? UIVisualEffectView
-            }
+        if let i = subviews.index(where: { $0.tag == dimViewIdentifier }) {
+            subviews[i].removeFromSuperview()
         }
-        
-        return nil
     }
 }
