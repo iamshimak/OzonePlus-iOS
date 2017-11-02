@@ -15,14 +15,19 @@ class Util: NSObject {
     
     static func displayActivityIndicator() {
         let window : UIView = (UIApplication.shared.delegate?.window!)!
-        displayActivityIndicatorForView(view: window)
+        displayActivityIndicatorForView(view: window, actType: .ballPulse)
     }
     
-    static func displayActivityIndicatorForView(view: UIView) {
-        let viewFrame = CGRect(x: 0, y: 0, width: 60, height: 60)
+    static func displayActivityIndicatorForImageView(view: UIView) {
+        displayActivityIndicatorForView(view: view, actType: .lineScaleParty)
+    }
+    
+    static func displayActivityIndicatorForView(view: UIView, actType: NVActivityIndicatorType) {
+        let size = view.frame.size.width * 12 / 100
+        let viewFrame = CGRect(x: 0, y: 0, width: size, height: size)
         let center = CGPoint(x: (view.frame).midX, y: (view.frame).midY)
         
-        let activityIndicator = NVActivityIndicatorView(frame: viewFrame, type: .ballPulse, color: UIColor.white, padding: NVActivityIndicatorView.DEFAULT_PADDING);
+        let activityIndicator = NVActivityIndicatorView(frame: viewFrame, type: actType, color: UIColor.white, padding: NVActivityIndicatorView.DEFAULT_PADDING);
         activityIndicator.center = center
         activityIndicator.startAnimating()
         
@@ -49,7 +54,12 @@ class Util: NSObject {
         removeDimView(view: window)
     }
     
-    private static func removeIndicator(forView: UIView) {
+    static func removeActivityIndicator(forView: UIView) {
+        removeIndicator(forView: forView)
+        removeDimView(view: forView)
+    }
+    
+    static func removeIndicator(forView: UIView) {
         let subviews = forView.subviews.reversed()
         
         if let i = subviews.index(where: { $0.isKind(of: NVActivityIndicatorView.classForCoder()) }) {

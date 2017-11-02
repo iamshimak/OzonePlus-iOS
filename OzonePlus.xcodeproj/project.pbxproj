@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C010A7B41FA84089000080C2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010A7B31FA84089000080C2 /* ProfileViewController.swift */; };
 		C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */; };
 		C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */; };
 		C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83D1FA704BF00168CDA /* UserViewModel.swift */; };
@@ -28,13 +27,13 @@
 		C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F231FA06801009778B7 /* SigninManager.swift */; };
 		C0B38F281FA0891C009778B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F271FA0891C009778B7 /* User.swift */; };
 		C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F291FA09AA0009778B7 /* Util.swift */; };
+		C0FC75F91FAAF40500ECA612 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC75F81FAAF40500ECA612 /* ProfileView.swift */; };
 		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OzonePlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C010A7B31FA84089000080C2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
 		C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionTableViewController.swift; sourceTree = "<group>"; };
 		C01CF83D1FA704BF00168CDA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		C0B38F231FA06801009778B7 /* SigninManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninManager.swift; sourceTree = "<group>"; };
 		C0B38F271FA0891C009778B7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0B38F291FA09AA0009778B7 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		C0FC75F81FAAF40500ECA612 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,9 +138,9 @@
 				C0A2B4131F98A8F30022D66C /* LoginViewController.swift */,
 				C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */,
 				C0B38F201FA06146009778B7 /* GoogleService-Info.plist */,
-				C010A7B31FA84089000080C2 /* ProfileViewController.swift */,
 				C0A2B40D1F98A7CC0022D66C /* Info.plist */,
 				C0B38F291FA09AA0009778B7 /* Util.swift */,
+				C0FC75F81FAAF40500ECA612 /* ProfileView.swift */,
 				C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */,
 				C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */,
 				C0A2B4051F98A7CC0022D66C /* OzonePlus.xcdatamodeld */,
@@ -323,12 +323,12 @@
 				C08EDB6F1FA9D6F500ABE808 /* PersistManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
 				C08EDB711FA9D71A00ABE808 /* DownloadManager.swift in Sources */,
+				C0FC75F91FAAF40500ECA612 /* ProfileView.swift in Sources */,
 				C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */,
 				C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */,
 				C0B38F281FA0891C009778B7 /* User.swift in Sources */,
 				C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */,
 				C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */,
-				C010A7B41FA84089000080C2 /* ProfileViewController.swift in Sources */,
 				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
 				C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */,
 			);
@@ -471,12 +471,14 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OzonePlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OzonePlus/OzoneSDK/OzonePlus-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -491,12 +493,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = OzonePlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "OzonePlus/OzoneSDK/OzonePlus-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

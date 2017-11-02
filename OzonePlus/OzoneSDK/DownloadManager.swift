@@ -10,26 +10,30 @@ import Foundation
 import AFNetworking
 
 class DownloadManager: NSObject {
-    let sharedInstance = DownloadManager()
-    
-    override init() {
-        //NotificationCenter.default.addObserver(self, selector: #selector(downloadImage), name: NSNotification.Name(rawValue: "DownloadImageNotification"), object: nil)
-    }
-    
-    @objc private func downloadImage(notification: Notification) {
-        
-    }
     
     typealias OnDownloadImageDownload = (_ : UIImage?, _ : Error?) -> Void
     
-    func downloadImage(fromUrl: String, onCompletion: @escaping OnDownloadImageDownload) {
+    static func downloadImage(fromUrl: URL, onCompletion: @escaping OnDownloadImageDownload) {
         let down = AFImageDownloader()
-        let urlRequest = URLRequest(url: URL(string: fromUrl)!)
+        let urlRequest = URLRequest(url: fromUrl)
         
         down.downloadImage(for: urlRequest, success: { (request, response, responseObject) in
             onCompletion(responseObject, nil)
+            PersistManager.save(image: responseObject, name: "profile_pic")
         }, failure: { (request, response, error) in
             onCompletion(nil, error)
         })
     }
+    
+//    static func downloadImage(fromUrl: String, onCompletion: @escaping OnDownloadImageDownload) {
+//        let down = AFImageDownloader()
+//        let urlRequest = URLRequest(url: URL(string: fromUrl)!)
+//
+//        down.downloadImage(for: urlRequest, success: { (request, response, responseObject) in
+//            onCompletion(responseObject, nil)
+//            PersistManager.save(image: responseObject, name: "profile_pic")
+//        }, failure: { (request, response, error) in
+//            onCompletion(nil, error)
+//        })
+//    }
 }

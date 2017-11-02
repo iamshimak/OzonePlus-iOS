@@ -11,7 +11,7 @@ import Foundation
 
 class PersistManager: NSObject {
     
-    func getImage(name: String) -> UIImage? {
+    static func getImage(name: String) -> UIImage? {
         let data = NSData(contentsOfFile: "/Document/\(name)") as Data?
         return UIImage(data: data!)
     }
@@ -20,7 +20,7 @@ class PersistManager: NSObject {
 //    NSData *data = UIImagePNGRepresentation(image);
 //    [data writeToFile:filename atomically:YES];
     
-    func save(image: UIImage, name: String) {
+    static func save(image: UIImage, name: String) {
         let data = UIImagePNGRepresentation(image) as NSData?
         data?.write(toFile: name, atomically:true)
     }

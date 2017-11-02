@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="180"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VPR-dM-iZI">
-                                        <rect key="frame" x="80" y="10" width="160" height="160"/>
+                                        <rect key="frame" x="80.5" y="10" width="160" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VPR-dM-iZI" secondAttribute="height" multiplier="1:1" id="eaP-FK-P4n"/>
                                         </constraints>
@@ -256,7 +256,7 @@
         <!--Profile-->
         <scene sceneID="iTh-Ue-5T6">
             <objects>
-                <viewController title="Profile" id="xXy-4G-5Vv" customClass="ProfileViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="xXy-4G-5Vv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vf3-lk-pRg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -268,9 +268,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ig1-DD-AWr">
                                 <rect key="frame" x="0.0" y="20" width="320" height="150"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCU-HW-Rd7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCU-HW-Rd7" customClass="ProfileView" customModule="OzonePlus" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Qid-yO-kGl"/>
                                             <constraint firstAttribute="height" constant="100" id="b8g-Ib-mEj"/>
@@ -297,7 +297,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tR1-Jy-YZj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tabbar-profile" badgeValue="2" selectedImage="tabbar-profile" id="a7l-SX-yLf">
+                    <tabBarItem key="tabBarItem" title="" image="tabbar-profile" selectedImage="tabbar-profile" id="a7l-SX-yLf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                 </viewController>

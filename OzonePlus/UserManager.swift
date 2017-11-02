@@ -24,6 +24,10 @@ class UserManager: NSObject {
         user.firstName = googleUser.familyName
         user.fullName = googleUser.name
         user.email = googleUser.email
-        user.profilePic = googleUser.imageURL(withDimension: 100)
+        user.profilePic = googleUser.imageURL(withDimension: 500)
+    }
+    
+    func currentUser() -> User {
+        return user
     }
 }

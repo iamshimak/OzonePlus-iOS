@@ -75,12 +75,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
         
         Util.displayActivityIndicator()
         
-        SigninManager.signinUser(signinUser: user) { (res, error) in
+        let signinManager = SigninManager()
+        
+        signinManager.signinUser(signinUser: user) { (res, error) in
             
             Util.removeActivityIndicator()
             
             if let error = error {
-                NSLog(error.description)
+                
             } else {
                 self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
             }
