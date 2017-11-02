@@ -56,7 +56,8 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
     // MARK: - GID Signin
     
     @objc func googleSigninAction(sender: UIButton) {
-        GIDSignIn.sharedInstance().signIn()
+        let signinManager = SigninManager()
+        signinManager.signinWithGoogle()
     }
     
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {

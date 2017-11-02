@@ -70,13 +70,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     
     @IBAction func loginAction(_ sender: Any) {
         dismissKeyboard()
-        
-        let signinManager = SigninManager()
+
         let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
         
         Util.displayActivityIndicator()
         
-        signinManager.signinUser(signinUser: user) { (res, error) in
+        SigninManager.signinUser(signinUser: user) { (res, error) in
             
             Util.removeActivityIndicator()
             

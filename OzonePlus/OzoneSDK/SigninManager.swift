@@ -8,6 +8,7 @@
 
 import Firebase
 import FirebaseAuth
+import GoogleSignIn
 
 class SigninManager: NSObject {
     
@@ -19,12 +20,16 @@ class SigninManager: NSObject {
     func signinUser(signinUser: SigninUser, onCompletion:@escaping AuthResultCallback) {
         Auth.auth().signIn(withEmail: signinUser.username, password: signinUser.password) { (user, error) in
             if let error = error {
-                onCompletion(nil, error as NSError)
+                onCompletion(nil, error)
             } else {
                 onCompletion(user?.refreshToken, nil)
             }
         }
     }
     
-    typealias AuthResultCallback = (_ : String?, _ : NSError?) -> Void
+    func signinWithGoogle() {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    typealias AuthResultCallback = (_ : String?, _ : Error?) -> Void
 }
