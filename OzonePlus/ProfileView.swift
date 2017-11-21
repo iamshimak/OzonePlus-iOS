@@ -1,4 +1,4 @@
-//
+ //
 //  ProfileView.swift
 //  OzonePlus
 //
@@ -20,30 +20,30 @@ class ProfileView: UIView, UIImagePickerControllerDelegate {
     }
     */
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        coverImage = UIImageView.init(frame: frame)
-        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pickImageToUpload))
-        
-        coverImage.addGestureRecognizer(tapGesture)
-        addSubview(coverImage)
-
-        Util.displayActivityIndicatorForImageView(view: self)
-
-        DownloadManager.downloadImage(fromUrl: UserManager.sharedInstance.currentUser().profilePic!, onCompletion: { (image, error) in
-            if image != nil {
-                self.coverImage.image = image
-            } else {
-
-            }
-        })
-    }
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//        coverImage = UIImageView.init(frame: frame)
+//        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pickImageToUpload))
+//        
+//        coverImage.addGestureRecognizer(tapGesture)
+//        addSubview(coverImage)
+//
+//        Util.displayActivityIndicatorForImageView(view: self)
+//
+//        DownloadManager.downloadImage(fromUrl: UserManager.sharedInstance.currentUser().profilePic!, onCompletion: { (image, error) in
+//            if image != nil {
+//                self.coverImage.image = image
+//            } else {
+//
+//            }
+//        })
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        coverImage = UIImageView.init(frame: self.frame)
+        coverImage = UIImageView.init(frame: CGRect(x:0, y:0, width:frame.size.width, height:frame.size.height))
         addSubview(coverImage)
         
         let url = UserManager.sharedInstance.currentUser().profilePic!

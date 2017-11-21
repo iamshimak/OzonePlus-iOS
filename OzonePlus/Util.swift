@@ -25,7 +25,7 @@ class Util: NSObject {
     static func displayActivityIndicatorForView(view: UIView, actType: NVActivityIndicatorType) {
         let size = view.frame.size.width * 12 / 100
         let viewFrame = CGRect(x: 0, y: 0, width: size, height: size)
-        let center = CGPoint(x: (view.frame).midX, y: (view.frame).midY)
+        let center = view.center
         
         let activityIndicator = NVActivityIndicatorView(frame: viewFrame, type: actType, color: UIColor.white, padding: NVActivityIndicatorView.DEFAULT_PADDING);
         activityIndicator.center = center

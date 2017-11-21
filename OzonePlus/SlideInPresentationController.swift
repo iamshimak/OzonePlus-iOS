@@ -8,12 +8,10 @@
 import UIKit
 
 class SlideInPresentationController: UIPresentationController {
-  //1
   // MARK: - Properties
   fileprivate var dimmingView: UIView!
   private var direction: PresentationDirection
   
-  //2
   init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, direction: PresentationDirection) {
     self.direction = direction
     super.init(presentedViewController: presentedViewController, presenting: presentingViewController)

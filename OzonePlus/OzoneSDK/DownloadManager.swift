@@ -6,6 +6,7 @@
 //  Copyright © 2017 Ahamed Shimak. All rights reserved.
 //
 
+import Firebase
 import Foundation
 import AFNetworking
 
@@ -23,6 +24,17 @@ class DownloadManager: NSObject {
         }, failure: { (request, response, error) in
             onCompletion(nil, error)
         })
+    }
+    
+    static func downloadMedia(forUser: String, onCompletion: @escaping (_ :UIImage?, _ : Error?) -> Void) {
+        let storageRef = Storage.storage().reference().child("images/\(forUser)")
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                onCompletion(nil, error)
+            } else {
+                onCompletion(UIImage(data: data!), nil)
+            }
+        }
     }
     
 //    static func downloadImage(fromUrl: String, onCompletion: @escaping OnDownloadImageDownload) {

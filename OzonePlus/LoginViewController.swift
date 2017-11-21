@@ -81,7 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
             
             Util.removeActivityIndicator()
             
-            if let error = error {
+            if error != nil {
                 
             } else {
                 self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
