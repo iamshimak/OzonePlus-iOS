@@ -17,6 +17,9 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Crashlytics (3.9.3):
+    - Fabric (~> 1.7.2)
+  - Fabric (1.7.2)
   - Firebase/Auth (4.5.0):
     - Firebase/Core
     - FirebaseAuth (= 4.3.1)
@@ -77,6 +80,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Crashlytics (~> 3.9.3)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Storage
@@ -95,6 +99,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Crashlytics: dbb07d01876c171c5ccbdf7826410380189e452c
+  Fabric: 9cd6a848efcf1b8b07497e0b6a2e7d336353ba15
   Firebase: d83d287bdb6b1c78320561482706d1fcfc8ddfc1
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
   FirebaseAuth: e7c2b1359c2df4af23a568100a8eace0b8c507e4
@@ -108,6 +114,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
 
-PODFILE CHECKSUM: bb3fae299d0a1bf3f627dafc2b11c437f88950ed
+PODFILE CHECKSUM: 62836cb1e88fbf0df2285bf5599cd1933a2cff17
 
 COCOAPODS: 1.3.1
