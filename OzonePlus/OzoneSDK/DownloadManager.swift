@@ -9,6 +9,7 @@
 import Firebase
 import Foundation
 import AFNetworking
+import FirebaseDatabase
 
 class DownloadManager: NSObject {
     
@@ -26,8 +27,8 @@ class DownloadManager: NSObject {
         })
     }
     
-    static func downloadMedia(forUser: String, onCompletion: @escaping (_ :UIImage?, _ : Error?) -> Void) {
-        let storageRef = Storage.storage().reference().child("images/\(forUser)")
+    static func downloadMedia(url: String, onCompletion: @escaping(_ :UIImage?, _ : Error?) -> Void) {
+        let storageRef = Storage.storage().reference().child("images/\(url)")
         storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 onCompletion(nil, error)
@@ -35,6 +36,15 @@ class DownloadManager: NSObject {
                 onCompletion(UIImage(data: data!), nil)
             }
         }
+    }
+    
+    static func downloadImages(onCompletion: @escaping(_ : NSArray?, _ : Error?) -> Void) {
+        let ref = Database.database().reference(withPath: "images/")
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSArray
+            onCompletion(value, nil)
+        })
     }
     
 //    static func downloadImage(fromUrl: String, onCompletion: @escaping OnDownloadImageDownload) {

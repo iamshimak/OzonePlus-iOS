@@ -12,23 +12,59 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
-    var images: [UIImage] = []
-    var imageNames = ["amazing-animal-beautiful-beautifull.jpg", "vector-wallpaper-ghost-wallpapers.jpg", "8K6mZ1j.png"]
-    var cellSize : CGFloat!
+    var images: [String] = []
+    
+    private let imageViewSegue = "showImageSegue"
+    
+    private var selectedImageIndex: Int = -1
+    private var selectedImage: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cellSize = imageCollectionView.frame.size.width / 3
+        //cellSize = imageCollectionView.frame.size.width / 3
         
-        for name in imageNames {
-            DownloadManager.downloadMedia(forUser: name,onCompletion: { (image, error) in
-                if image != nil {
-                    self.images.append(image!)
-                    self.imageCollectionView.insertItems(at: [IndexPath(item:self.images.count - 1 , section:0)])
+//        for name in imageNames {
+//            DownloadManager.downloadMedia(forUser: name,onCompletion: { (image, error) in
+//                if image != nil {
+//                    self.images.append(image!)
+//                    self.imageCollectionView.insertItems(at: [IndexPath(item:self.images.count - 1 , section:0)])
+//                }
+//            })
+//        }
+        setCollectioViewCellSpacing()
+        DownloadManager.downloadImages(onCompletion: { (images, error) in
+            if images != nil {
+                for img in images! {
+                    self.images.append(img as! String)
                 }
-            })
-        }
+                self.imageCollectionView.reloadData()
+            }
+        })
+    }
+    
+    private func setCollectioViewCellSpacing() {
+        // Create flow layout
+        let flow = UICollectionViewFlowLayout()
+        
+        // Define layout constants
+        let itemSpacing: CGFloat = 1.0
+        let collectionViewWidth = imageCollectionView!.bounds.size.width
+        let itemsInOneLine: CGFloat = 3.0
+        
+        // Calculate other required constants
+        let width = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
+        let cellWidth = floor(width / itemsInOneLine)
+        let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
+        
+        // Apply values
+        flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flow.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        flow.minimumInteritemSpacing = realItemSpacing
+        flow.minimumLineSpacing = realItemSpacing
+        
+        // Apply flow layout
+        imageCollectionView?.setCollectionViewLayout(flow, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,14 +81,23 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(101) as! UIImageView!
-        imageView?.image = images[indexPath.row]
+        imageView?.imageWithURL(url: images[indexPath.row])
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: imageCollectionView.frame.size.width / 3, height: imageCollectionView.frame.size.width / 3);
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedImageIndex = indexPath.row
+        let cell = collectionView.cellForItem(at: indexPath)
+        let imageView = cell?.viewWithTag(101) as! UIImageView!
+        selectedImage = imageView?.image
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? ImageRepresentViewController {
+            vc.image = selectedImage
+        }
     }
     
     /*

@@ -78,7 +78,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
         let signinManager = SigninManager()
         
         signinManager.signinUser(signinUser: user) { (res, error) in
-            
             Util.removeActivityIndicator()
             
             if error != nil {

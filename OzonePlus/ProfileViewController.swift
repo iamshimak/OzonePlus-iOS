@@ -11,10 +11,12 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateProfilePic()
+        initializeAppSettings()
         // Do any additional setup after loading the view.
     }
 
@@ -28,10 +30,10 @@ class ProfileViewController: UIViewController {
     }
     
     func updateProfilePic() {
-        let url = UserManager.sharedInstance.currentUser().profilePic!
+        let url : URL? = UserManager.sharedInstance.currentUser().profilePic!
         
         if url != nil {
-            downloadProfileImage(url: url)
+            downloadProfileImage(url: url!)
         } else {
             profileImage.image = PersistManager.getImage(name: "profile_pic")
         }
@@ -48,6 +50,11 @@ class ProfileViewController: UIViewController {
                 
             }
         })
+    }
+    
+    private func initializeAppSettings() {
+        let user = UserManager.sharedInstance.currentUser()
+        nameLabel.text = "\(user.firstName!)\n\(user.lastName!)"
     }
 
     /*

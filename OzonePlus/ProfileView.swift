@@ -46,12 +46,12 @@ class ProfileView: UIView, UIImagePickerControllerDelegate {
         coverImage = UIImageView.init(frame: CGRect(x:0, y:0, width:frame.size.width, height:frame.size.height))
         addSubview(coverImage)
         
-        let url = UserManager.sharedInstance.currentUser().profilePic!
+        let url : URL? = UserManager.sharedInstance.currentUser().profilePic!
         
         if url != nil {
-            downloadProfileImage(url: url)
+            downloadProfileImage(url: url!)
         } else {
-            coverImage.image = PersistManager.getImage(name: "profile_pic")
+            //coverImage.image = PersistManager.getImage(name: "profile_pic")
         }
     }
     
