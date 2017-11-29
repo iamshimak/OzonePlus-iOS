@@ -11,11 +11,20 @@ import UIKit
 class ImageRepresentViewController: UIViewController {
     
     public var image: UIImage! = nil
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initializeSettings()
+    }
+    
+    private func initializeSettings() {
+        if image != nil {
+            imageView.image = image
+            imageViewHeightConstraint.constant = image.size.height
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -525,32 +525,33 @@ LastName</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-AV-Xg1">
                                 <rect key="frame" x="0.0" y="20" width="320" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UQn-kl-lSK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQn-kl-lSK">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="UQn-kl-lSK" firstAttribute="leading" secondItem="kcn-AV-Xg1" secondAttribute="leading" id="Ktz-qb-1O2"/>
-                                    <constraint firstItem="UQn-kl-lSK" firstAttribute="top" secondItem="kcn-AV-Xg1" secondAttribute="top" id="LjD-5X-qje"/>
-                                    <constraint firstAttribute="bottom" secondItem="UQn-kl-lSK" secondAttribute="bottom" id="bwU-IL-gvU"/>
-                                    <constraint firstAttribute="trailing" secondItem="UQn-kl-lSK" secondAttribute="trailing" id="gMu-j8-Opb"/>
-                                    <constraint firstAttribute="height" constant="200" id="rIa-of-eQD"/>
+                                    <constraint firstAttribute="height" constant="200" id="s5e-Kt-Xyq"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6XI-21-DdN" firstAttribute="leading" secondItem="4Us-BA-0tw" secondAttribute="leading" id="3Eg-NB-2aT"/>
-                            <constraint firstAttribute="trailing" secondItem="kcn-AV-Xg1" secondAttribute="trailing" id="6fG-xB-0tB"/>
-                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="leading" secondItem="4Us-BA-0tw" secondAttribute="leading" id="HUh-mg-1LF"/>
-                            <constraint firstAttribute="trailing" secondItem="6XI-21-DdN" secondAttribute="trailing" id="gQz-Jv-GQt"/>
-                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="top" secondItem="6XI-21-DdN" secondAttribute="bottom" id="nfY-XV-coD"/>
-                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="top" secondItem="ukA-j6-bIP" secondAttribute="top" id="oJN-sl-aOy"/>
-                            <constraint firstItem="6XI-21-DdN" firstAttribute="top" secondItem="4Us-BA-0tw" secondAttribute="top" id="q97-C2-1CR"/>
+                            <constraint firstAttribute="trailing" secondItem="6XI-21-DdN" secondAttribute="trailing" id="4Ld-rC-VjK"/>
+                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="leading" secondItem="ukA-j6-bIP" secondAttribute="leading" id="6L7-wH-Ej7"/>
+                            <constraint firstItem="6XI-21-DdN" firstAttribute="leading" secondItem="4Us-BA-0tw" secondAttribute="leading" id="76O-iB-RnF"/>
+                            <constraint firstItem="6XI-21-DdN" firstAttribute="top" secondItem="4Us-BA-0tw" secondAttribute="top" id="8FW-ts-fBn"/>
+                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="trailing" secondItem="ukA-j6-bIP" secondAttribute="trailing" id="Ccw-Tx-GkI"/>
+                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="top" secondItem="ukA-j6-bIP" secondAttribute="top" id="NMX-33-HeM"/>
+                            <constraint firstItem="kcn-AV-Xg1" firstAttribute="top" secondItem="6XI-21-DdN" secondAttribute="bottom" id="qUr-BA-BFq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ukA-j6-bIP"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="UQn-kl-lSK" id="LHg-tA-EVK"/>
+                        <outlet property="imageViewHeightConstraint" destination="s5e-Kt-Xyq" id="bOn-g8-U1g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xi5-hG-hrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

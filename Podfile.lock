@@ -76,6 +76,30 @@ PODS:
   - GTMSessionFetcher/Full (1.1.12):
     - GTMSessionFetcher/Core (= 1.1.12)
   - leveldb-library (1.20)
+  - libwebp (0.6.0):
+    - libwebp/core (= 0.6.0)
+    - libwebp/dec (= 0.6.0)
+    - libwebp/demux (= 0.6.0)
+    - libwebp/dsp (= 0.6.0)
+    - libwebp/enc (= 0.6.0)
+    - libwebp/mux (= 0.6.0)
+    - libwebp/utils (= 0.6.0)
+    - libwebp/webp (= 0.6.0)
+  - libwebp/core (0.6.0):
+    - libwebp/webp
+  - libwebp/dec (0.6.0):
+    - libwebp/core
+  - libwebp/demux (0.6.0):
+    - libwebp/core
+  - libwebp/dsp (0.6.0):
+    - libwebp/core
+  - libwebp/enc (0.6.0):
+    - libwebp/core
+  - libwebp/mux (0.6.0):
+    - libwebp/core
+  - libwebp/utils (0.6.0):
+    - libwebp/core
+  - libwebp/webp (0.6.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -84,6 +108,10 @@ PODS:
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
+  - SDWebImage/Core (4.2.2)
+  - SDWebImage/WebP (4.2.2):
+    - libwebp
+    - SDWebImage/Core
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -95,6 +123,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleSignIn
   - NVActivityIndicatorView
+  - SDWebImage/WebP
 
 EXTERNAL SOURCES:
   ChameleonFramework:
@@ -122,9 +151,11 @@ SPEC CHECKSUMS:
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
+  libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
-PODFILE CHECKSUM: ce8c7026fc43ad555d0248c16ef617dc410e1aad
+PODFILE CHECKSUM: 5bbb2eb768a9a81937d0c22a6e85b85bb0bc70b9
 
 COCOAPODS: 1.3.1
