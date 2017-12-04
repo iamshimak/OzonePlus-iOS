@@ -13,6 +13,7 @@ target 'OzonePlus' do
   pod 'Firebase/Core'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod 'FirebaseUI/Storage'
   pod 'GoogleSignIn'
   
   pod 'SDWebImage/WebP'

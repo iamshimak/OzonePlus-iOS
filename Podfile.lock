@@ -53,6 +53,9 @@ PODS:
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseUI/Storage (4.5.0):
+    - Firebase/Storage (~> 4.0)
+    - SDWebImage (~> 4.0)
   - GoogleSignIn (4.1.1):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -108,6 +111,8 @@ PODS:
   - NVActivityIndicatorView (4.0.0):
     - NVActivityIndicatorView/Presenter (= 4.0.0)
   - NVActivityIndicatorView/Presenter (4.0.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
   - SDWebImage/WebP (4.2.2):
     - libwebp
@@ -121,6 +126,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - FirebaseUI/Storage
   - GoogleSignIn
   - NVActivityIndicatorView
   - SDWebImage/WebP
@@ -146,16 +152,17 @@ SPEC CHECKSUMS:
   FirebaseDatabase: 607284a103e961d7f5863ee603cab5e85f443bd6
   FirebaseInstanceID: f2b688c66b972f30d7fa9f5f9f91455454a03b47
   FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
+  FirebaseUI: 883482fea73b73bbb488c55176f4c6ad128957eb
   GoogleSignIn: 3fdaa34a2ba04dbd7a25d7db39aecb0da98d5bdc
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMOAuth2: be83fd28d63ae3087e7d351b1f39c1a7e24ab6e7
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
+  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
   libwebp: 1d5a07c2eb97f9c31bd5f154bb82efc0ea67c6a2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
 
-PODFILE CHECKSUM: 5bbb2eb768a9a81937d0c22a6e85b85bb0bc70b9
+PODFILE CHECKSUM: 077f83538ba554b58dcaf96b0b61f73ba8e10d12
 
 COCOAPODS: 1.3.1

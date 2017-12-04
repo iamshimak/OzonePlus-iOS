@@ -422,44 +422,6 @@ LastName</string>
                                             <constraint firstItem="VuJ-z6-WEH" firstAttribute="leading" secondItem="DTA-aO-TiD" secondAttribute="leading" id="rgM-mG-BMF"/>
                                         </constraints>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="92H-UW-Jpe">
-                                        <rect key="frame" x="107.5" y="0.0" width="105" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-hQ-BYu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="xmg-hQ-BYu" firstAttribute="leading" secondItem="92H-UW-Jpe" secondAttribute="leading" id="Fx1-oh-Fmd"/>
-                                            <constraint firstAttribute="bottom" secondItem="xmg-hQ-BYu" secondAttribute="bottom" id="Lqh-gc-Vdf"/>
-                                            <constraint firstAttribute="trailing" secondItem="xmg-hQ-BYu" secondAttribute="trailing" id="gc8-wY-VGS"/>
-                                            <constraint firstItem="xmg-hQ-BYu" firstAttribute="top" secondItem="92H-UW-Jpe" secondAttribute="top" id="iMn-aT-PxY"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="2My-Sg-iJ9">
-                                        <rect key="frame" x="215" y="0.0" width="105" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bL8-3Q-2UI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="bL8-3Q-2UI" secondAttribute="trailing" id="Ksf-qO-982"/>
-                                            <constraint firstItem="bL8-3Q-2UI" firstAttribute="leading" secondItem="2My-Sg-iJ9" secondAttribute="leading" id="dEB-lb-cdh"/>
-                                            <constraint firstItem="bL8-3Q-2UI" firstAttribute="top" secondItem="2My-Sg-iJ9" secondAttribute="top" id="yrf-zu-Xjp"/>
-                                            <constraint firstAttribute="bottom" secondItem="bL8-3Q-2UI" secondAttribute="bottom" id="zZe-91-kuj"/>
-                                        </constraints>
-                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="xgd-xn-pSX" id="qCP-H3-IOb"/>
@@ -525,14 +487,17 @@ LastName</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcn-AV-Xg1">
                                 <rect key="frame" x="0.0" y="20" width="320" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQn-kl-lSK">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UQn-kl-lSK">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="UQn-kl-lSK" firstAttribute="leading" secondItem="kcn-AV-Xg1" secondAttribute="leading" id="P1U-Yh-MXA"/>
+                                    <constraint firstItem="UQn-kl-lSK" firstAttribute="top" secondItem="kcn-AV-Xg1" secondAttribute="top" id="gvX-Qc-GT2"/>
                                     <constraint firstAttribute="height" constant="200" id="s5e-Kt-Xyq"/>
+                                    <constraint firstAttribute="bottom" secondItem="UQn-kl-lSK" secondAttribute="bottom" id="w2c-Ww-k1u"/>
+                                    <constraint firstAttribute="trailing" secondItem="UQn-kl-lSK" secondAttribute="trailing" id="yql-G6-Dza"/>
                                 </constraints>
                             </view>
                         </subviews>
