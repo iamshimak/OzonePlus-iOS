@@ -27,8 +27,12 @@ class DownloadManager: NSObject {
         })
     }
     
+    static func storageReferenceFor(url: String) -> StorageReference {
+        return Storage.storage().reference().child("images/\(url)")
+    }
+    
     static func downloadMedia(url: String, onCompletion: @escaping(_ :UIImage?, _ : Error?) -> Void) {
-        let storageRef = Storage.storage().reference().child("images/\(url)")
+        let storageRef = storageReferenceFor(url: url)
         storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 onCompletion(nil, error)

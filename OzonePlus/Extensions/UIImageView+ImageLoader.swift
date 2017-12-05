@@ -8,16 +8,20 @@
 
 import Foundation
 import AFNetworking
+import SDWebImage
+import FirebaseStorageUI
 
 extension UIImageView {
     func imageWithURL(url: String) {
         image = nil
         Util.displayActivityIndicatorForImageView(view: self)
-        DownloadManager.downloadMedia(url: url, onCompletion: { (image, error) in
-            if error == nil {
-                Util.removeActivityIndicator(forView: self)
-                self.image = image
-            }
+        sd_setImage(with: DownloadManager.storageReferenceFor(url: url),
+                    placeholderImage: nil, completion: { (image, error, cashType, reference) in
+                        
+                        if error == nil {
+                            self.image = image
+                        }
+                        Util.removeActivityIndicator(forView: self)
         })
     }
 }

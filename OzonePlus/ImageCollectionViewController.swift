@@ -33,6 +33,10 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
 //            })
 //        }
         setCollectioViewCellSpacing()
+        loadImages()
+    }
+    
+    func loadImages() {
         DownloadManager.downloadImages(onCompletion: { (images, error) in
             if images != nil {
                 for img in images! {
