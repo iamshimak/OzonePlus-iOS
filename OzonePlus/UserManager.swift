@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import FirebaseAuth
 import GoogleSignIn
 
 class UserManager: NSObject {
     
     static let sharedInstance = UserManager()
     
-    private var user : User
+    private var user : OZUser
     
     private override init() {
-        self.user = User.init()
+        self.user = OZUser.init()
     }
     
     func updateFrom(googleUser: GIDProfileData!) {
@@ -27,7 +28,13 @@ class UserManager: NSObject {
         user.profilePic = googleUser.imageURL(withDimension: 500)
     }
     
-    func currentUser() -> User {
+    func updateFrom(firUser: User!) {
+        user.fullName = firUser.displayName
+        user.email = firUser.email
+        user.profilePic = firUser.photoURL
+    }
+    
+    func currentUser() -> OZUser {
         return user
     }
 }

@@ -21,17 +21,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //cellSize = imageCollectionView.frame.size.width / 3
-        
-//        for name in imageNames {
-//            DownloadManager.downloadMedia(forUser: name,onCompletion: { (image, error) in
-//                if image != nil {
-//                    self.images.append(image!)
-//                    self.imageCollectionView.insertItems(at: [IndexPath(item:self.images.count - 1 , section:0)])
-//                }
-//            })
-//        }
+    
         setCollectioViewCellSpacing()
         loadImages()
     }

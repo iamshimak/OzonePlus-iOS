@@ -30,12 +30,12 @@ class ProfileViewController: UIViewController {
     }
     
     func updateProfilePic() {
-        let url : URL? = UserManager.sharedInstance.currentUser().profilePic!
+        let url : URL? = UserManager.sharedInstance.currentUser().profilePic
         
         if url != nil {
             downloadProfileImage(url: url!)
         } else {
-            profileImage.image = PersistManager.getImage(name: "profile_pic")
+            //profileImage.image = PersistManager.getImage(name: "profile_pic")
         }
     }
     
@@ -54,7 +54,11 @@ class ProfileViewController: UIViewController {
     
     private func initializeAppSettings() {
         let user = UserManager.sharedInstance.currentUser()
-        nameLabel.text = "\(user.firstName!)\n\(user.lastName!)"
+        if user.fullName?.count != 0 {
+            nameLabel.text = user.fullName
+        } else {
+            nameLabel.text = "\(user.firstName!)\n\(user.lastName!)"
+        }
     }
 
     /*

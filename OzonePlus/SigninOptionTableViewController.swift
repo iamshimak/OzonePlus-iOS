@@ -34,7 +34,7 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,10 +45,17 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
             signinButton.addTarget(self, action: #selector(googleSigninAction), for: .touchUpInside)
             
             return cell
+            
         } else if indexPath.row == 1 {
-            return tableView.dequeueReusableCell(withIdentifier: "facebookSigninCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "customSigninCell", for: indexPath)
+            
+            let signinButton = cell.viewWithTag(100) as! UIButton
+            signinButton.addTarget(self, action: #selector(emailSigninAction), for: .touchUpInside)
+            
+            return cell
+            
         } else if indexPath.row == 2 {
-            return tableView.dequeueReusableCell(withIdentifier: "customSigninCell", for: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "facebookSigninCell", for: indexPath)
         } else {
             return tableView.dequeueReusableCell(withIdentifier: "termsOfUseCell", for: indexPath)
         }
@@ -56,6 +63,10 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
     
     @objc func googleSigninAction(sender: UIButton) {
         performSegue(withIdentifier: "displaySafariBackground", sender: self)
+    }
+    
+    @objc func emailSigninAction(sender: UIButton) {
+        performSegue(withIdentifier: "showEmailSignup", sender: self)
     }
 
     /*
