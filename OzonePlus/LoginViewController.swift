@@ -70,20 +70,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     
     @IBAction func loginAction(_ sender: Any) {
         dismissKeyboard()
-
-        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
-        
         Util.displayActivityIndicator()
         
+        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
         let signinManager = SigninManager()
         
         signinManager.signinUser(signinUser: user) { (res, error) in
             Util.removeActivityIndicator()
-            
             if error != nil {
                 
             } else {
-                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
+                showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
             }
         }
         
@@ -134,7 +131,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     }
     
     func isTextFieldsEmpty() -> Bool {
-        return emailTextField.text!.characters.count == 0 || passwordTextField.text!.characters.count == 0
+        return emailTextField.text!.count == 0 || passwordTextField.text!.count == 0
     }
     
     // MARK: - Keyboard Notification

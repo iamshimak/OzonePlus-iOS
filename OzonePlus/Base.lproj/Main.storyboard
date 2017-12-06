@@ -101,7 +101,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2vW-bu-Rud"/>
-                                    <segue destination="4Tm-y1-3NO" kind="presentation" identifier="signupOptionSegue" modalPresentationStyle="overCurrentContext" id="WUG-Oc-y89"/>
+                                    <segue destination="4Tm-y1-3NO" kind="show" identifier="signupOptionSegue" id="WUG-Oc-y89"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -218,9 +218,6 @@
                                             <state key="normal" title="Continue with E-mail">
                                                 <color key="titleColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
-                                            <connections>
-                                                <segue destination="RqU-YZ-VLd" kind="show" id="ce5-up-tGF"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -238,6 +235,9 @@
                             <outlet property="delegate" destination="4Tm-y1-3NO" id="f76-u1-LX2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="RqU-YZ-VLd" kind="show" identifier="displaySafariBackground" id="Bvl-8K-B9t"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUX-gP-UUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="2335" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Safari Back Ground View Controller-->
         <scene sceneID="Iw6-EE-6q3">
             <objects>
-                <viewController id="RqU-YZ-VLd" sceneMemberID="viewController">
+                <viewController id="RqU-YZ-VLd" customClass="SafariBackGroundViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tgg-kC-yeY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -457,7 +457,7 @@ LastName</string>
                     <connections>
                         <outlet property="imageCollectionView" destination="9gT-UL-T14" id="Ha6-vY-C7s"/>
                         <outlet property="searchDisplayController" destination="u48-RU-unf" id="wpe-11-moC"/>
-                        <segue destination="9zS-d4-I4D" kind="presentation" identifier="showImageSegue" id="MCg-SC-5au"/>
+                        <segue destination="9zS-d4-I4D" kind="show" identifier="showImageSegue" id="MCg-SC-5au"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yV-1Q-BTE" userLabel="First Responder" sceneMemberID="firstResponder"/>

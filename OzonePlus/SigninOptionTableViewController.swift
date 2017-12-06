@@ -11,10 +11,11 @@ import GoogleSignIn
 
 class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegate, UIViewControllerTransitioningDelegate {
     
+    public var isUserSignedIn: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,19 +54,8 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
         }
     }
     
-    // MARK: - GID Signin
-    
     @objc func googleSigninAction(sender: UIButton) {
-        let signinManager = SigninManager()
-        signinManager.signinWithGoogle()
-    }
-    
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        if (error != nil) {
-            return
-        }
-        
-        self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
+        performSegue(withIdentifier: "displaySafariBackground", sender: self)
     }
 
     /*
