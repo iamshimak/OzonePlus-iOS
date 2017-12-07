@@ -12,7 +12,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
-    var images: [String] = []
+    var images: [OZImage] = []
     
     private let imageViewSegue = "showImageSegue"
     
@@ -30,7 +30,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
         DownloadManager.downloadImages(onCompletion: { (images, error) in
             if images != nil {
                 for img in images! {
-                    self.images.append(img as! String)
+                    self.images.append(img)
                 }
                 self.imageCollectionView.reloadData()
             }
@@ -75,7 +75,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(101) as! UIImageView!
-        imageView?.imageWithURL(url: images[indexPath.row])
+        imageView?.imageWith(img: images[indexPath.row])
         return cell
     }
     

@@ -24,4 +24,21 @@ extension UIImageView {
                         Util.removeActivityIndicator(forView: self)
         })
     }
+    
+    func imageWith(img: OZImage) {
+        image = nil
+        Util.displayActivityIndicatorForImageView(view: self)
+        sd_setImage(with: DownloadManager.storageReferenceFor(url: img.url),
+                    placeholderImage: nil, completion: { (image, error, cashType, reference) in
+                        
+                        if error == nil {
+                            self.image = image
+                        }
+                        Util.removeActivityIndicator(forView: self)
+        })
+    }
+    
+    private func downloadImage() {
+        
+    }
 }

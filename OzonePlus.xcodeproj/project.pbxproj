@@ -22,6 +22,8 @@
 		C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04729821FA74C8900E5B0F7 /* SignupManager.swift */; };
 		C07DC47E1FD7B845006E9ED1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC47D1FD7B845006E9ED1 /* SignupViewController.swift */; };
 		C07DC4811FD7BA5C006E9ED1 /* KeyBoardAvoidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC4801FD7BA5C006E9ED1 /* KeyBoardAvoidViewController.swift */; };
+		C07DC4841FD82243006E9ED1 /* OZImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC4831FD82242006E9ED1 /* OZImage.swift */; };
+		C07DC4861FD9205D006E9ED1 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07DC4851FD9205C006E9ED1 /* UploadManager.swift */; };
 		C08EDB6D1FA9D5CB00ABE808 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EDB6C1FA9D5CB00ABE808 /* DataManager.swift */; };
 		C08EDB6F1FA9D6F500ABE808 /* PersistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EDB6E1FA9D6F500ABE808 /* PersistManager.swift */; };
 		C08EDB711FA9D71A00ABE808 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08EDB701FA9D71A00ABE808 /* DownloadManager.swift */; };
@@ -60,6 +62,8 @@
 		C07DC47D1FD7B845006E9ED1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		C07DC4801FD7BA5C006E9ED1 /* KeyBoardAvoidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardAvoidViewController.swift; sourceTree = "<group>"; };
 		C07DC4821FD7EB90006E9ED1 /* OzonePlus.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = OzonePlus.entitlements; sourceTree = "<group>"; };
+		C07DC4831FD82242006E9ED1 /* OZImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OZImage.swift; path = ViewModels/OZImage.swift; sourceTree = "<group>"; };
+		C07DC4851FD9205C006E9ED1 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
 		C08EDB6C1FA9D5CB00ABE808 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C08EDB6E1FA9D6F500ABE808 /* PersistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistManager.swift; sourceTree = "<group>"; };
 		C08EDB701FA9D71A00ABE808 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
@@ -171,10 +175,10 @@
 				C010A7EF1FA86FB6000080C2 /* Extensions */,
 				C0B38F221FA067C1009778B7 /* OzoneSDK */,
 				C0B38F261FA088ED009778B7 /* Models */,
-				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
 				C07DC47F1FD7B9A2006E9ED1 /* BrandComponents */,
 				C01CF83F1FA7053300168CDA /* UserManager.swift */,
 				C0A2B4021F98A7CC0022D66C /* Main.storyboard */,
+				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
 				C0A2B4081F98A7CC0022D66C /* Assets.xcassets */,
 				C0A2B40A1F98A7CC0022D66C /* LaunchScreen.storyboard */,
 				C0A2B4131F98A8F30022D66C /* LoginViewController.swift */,
@@ -204,6 +208,7 @@
 				C08EDB6C1FA9D5CB00ABE808 /* DataManager.swift */,
 				C08EDB6E1FA9D6F500ABE808 /* PersistManager.swift */,
 				C08EDB701FA9D71A00ABE808 /* DownloadManager.swift */,
+				C07DC4851FD9205C006E9ED1 /* UploadManager.swift */,
 			);
 			path = OzoneSDK;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				C0B38F271FA0891C009778B7 /* OZUser.swift */,
+				C07DC4831FD82242006E9ED1 /* OZImage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 				C0098C951FCC48D300F3BEB2 /* ImageRepresentViewController.swift in Sources */,
 				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
 				C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */,
+				C07DC4861FD9205D006E9ED1 /* UploadManager.swift in Sources */,
 				C035B71D1FB08F1E0013CCE9 /* ProfileViewController.swift in Sources */,
 				C08EDB6F1FA9D6F500ABE808 /* PersistManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
@@ -412,6 +419,7 @@
 				C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */,
 				C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */,
 				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
+				C07DC4841FD82243006E9ED1 /* OZImage.swift in Sources */,
 				C07DC47E1FD7B845006E9ED1 /* SignupViewController.swift in Sources */,
 				C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */,
 			);

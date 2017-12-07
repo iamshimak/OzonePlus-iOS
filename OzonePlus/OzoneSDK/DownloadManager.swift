@@ -42,12 +42,20 @@ class DownloadManager: NSObject {
         }
     }
     
-    static func downloadImages(onCompletion: @escaping(_ : NSArray?, _ : Error?) -> Void) {
+    static func downloadImages(onCompletion: @escaping(_ : Array<OZImage>?, _ : Error?) -> Void) {
         let ref = Database.database().reference(withPath: "images/")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSArray
-            onCompletion(value, nil)
+            let imgs = snapshot.value as? Array<Any>
+            
+            var ozimgs:Array<OZImage>! = []
+            
+            for img in imgs! {
+                let oz = OZImage(dic:img as! Dictionary<String, Any>)
+                ozimgs.append(oz)
+            }
+            
+            onCompletion(ozimgs, nil)
         })
     }
     
