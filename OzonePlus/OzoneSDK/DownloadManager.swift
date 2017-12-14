@@ -59,6 +59,14 @@ class DownloadManager: NSObject {
         })
     }
     
+    static func itemsInDB(onCompletion: @escaping(_ :Int?, _ :Error?) -> Void){
+        let ref = Database.database().reference(withPath: "images/")
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            onCompletion((snapshot.value as? Array<Any>)?.count, nil)
+        })
+    }
+    
 //    static func downloadImage(fromUrl: String, onCompletion: @escaping OnDownloadImageDownload) {
 //        let down = AFImageDownloader()
 //        let urlRequest = URLRequest(url: URL(string: fromUrl)!)

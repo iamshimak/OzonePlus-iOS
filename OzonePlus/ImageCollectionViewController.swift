@@ -43,12 +43,12 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
         
         // Define layout constants
         let itemSpacing: CGFloat = 1.0
-        let collectionViewWidth = imageCollectionView!.bounds.size.width
+        let collectionViewWidth = self.view.bounds.size.width
         let itemsInOneLine: CGFloat = 3.0
         
         // Calculate other required constants
-        let width = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
-        let cellWidth = floor(width / itemsInOneLine)
+        let width: CGFloat = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
+        let cellWidth = width / itemsInOneLine
         let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
         
         // Apply values
@@ -63,7 +63,6 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - CollectionView Delegate

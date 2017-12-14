@@ -24,6 +24,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     private var isTextFieldSelected = false
     private var isKeyBoardShown = false
+    private var isUserSignedIn = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:
+    
     @IBAction func signupAction(_ sender: Any) {
         dismissKeyboard()
         Util.displayActivityIndicator()
@@ -48,12 +51,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                            onCompletion: { (success, error) in
                             
                             Util.removeActivityIndicator()
-                            
                             if error == nil {
+                                self.isUserSignedIn = true
                                 self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
                             }
         })
     }
+    
+    // MARK:
     
     func addKeyboardDismissToTapView() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -66,8 +71,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
     }
-    
-    // MARK:
     
     func initializeAppSettings() {
         signupButton.setTitleColor(UIColor.lightGray, for: .disabled)
@@ -167,15 +170,4 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
             return 216.0
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

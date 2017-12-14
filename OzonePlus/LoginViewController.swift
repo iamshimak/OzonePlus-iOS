@@ -28,6 +28,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     @IBOutlet weak var emailTextFieldToLogoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var signupButtomBottomConstraint: NSLayoutConstraint!
     
+    public var isUserSignedIn = false
+    
     private var isTextFieldSelected = false
     private var isKeyBoardShown = false
     private var signInCredentials: NSDictionary!

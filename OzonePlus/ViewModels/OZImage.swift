@@ -10,25 +10,20 @@ import UIKit
 import FirebaseDatabase
 
 class OZImage: NSObject {
-    var height: Double!
-    var width: Double!
+    var size: CGSize!
     var name: String!
-    var url: String!
+    var url: URL!
     var placeHolderColor: UIColor!
     
     init(snapshot: DataSnapshot) {
         let dic = snapshot.value as! Dictionary<String, Any>
-//        height = dic["height"] as! CGFloat
-//        width = dic["width"] as! CGFloat
         name = dic["name"] as! String
-        url = dic["url"] as! String
+        url = dic["url"] as! URL
         //placeHolderColor = dic[""]
     }
     
     init(dic: Dictionary<String, Any>) {
-//        height = dic["height"] as! CGFloat
-//        width = dic["width"] as! CGFloat
         name = dic["name"] as! String
-        url = dic["url"] as! String
+        url = URL(string:dic["url"] as! String)
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 import GoogleSignIn
 
 class SafariBackGroundViewController: UIViewController, GIDSignInUIDelegate {
+    
+    private var isUserSignedIn: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +30,10 @@ class SafariBackGroundViewController: UIViewController, GIDSignInUIDelegate {
     }
     
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-        if (error != nil) {
-            return
+        if error == nil {
+            isUserSignedIn = true
         }
         
-        showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
+        self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

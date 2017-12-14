@@ -25,10 +25,10 @@ extension UIImageView {
         })
     }
     
-    func imageWith(img: OZImage) {
+    func imageWithDBReference(img: OZImage) {
         image = nil
         Util.displayActivityIndicatorForImageView(view: self)
-        sd_setImage(with: DownloadManager.storageReferenceFor(url: img.url),
+        sd_setImage(with: DownloadManager.storageReferenceFor(url: img.name),
                     placeholderImage: nil, completion: { (image, error, cashType, reference) in
                         
                         if error == nil {
@@ -38,7 +38,15 @@ extension UIImageView {
         })
     }
     
-    private func downloadImage() {
-        
+    func imageWith(img: OZImage) {
+        image = nil
+        Util.displayActivityIndicatorForImageView(view: self)
+        sd_setImage(with: img.url, placeholderImage: nil, completed: { (image, error, cashType, reference) in
+            
+            if error == nil {
+                self.image = image
+            }
+            Util.removeActivityIndicator(forView: self)
+        })
     }
 }

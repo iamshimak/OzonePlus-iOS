@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         DownloadManager.downloadImages(onCompletion: { (images, error) in
             if images != nil {
                 for img in images! {
-                    //self.imageCollection.append(img)
+                    self.imageCollection.append(img)
                 }
                 self.imageCollectionView.reloadData()
             }
@@ -84,12 +84,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         // Define layout constants
         let itemSpacing: CGFloat = 1.0
-        let collectionViewWidth = imageCollectionView!.bounds.size.width
+        let collectionViewWidth = self.view.bounds.size.width
         let itemsInOneLine: CGFloat = 3.0
         
         // Calculate other required constants
-        let width = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
-        let cellWidth = floor(width / itemsInOneLine)
+        let width: CGFloat = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
+        let cellWidth = width / itemsInOneLine
         let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
         
         // Apply values
@@ -111,7 +111,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(100) as! UIImageView
-        imageView.imageWithURL(url: imageCollection[indexPath.row].url)
+        imageView.imageWith(img: imageCollection[indexPath.row])
         return cell
     }
 

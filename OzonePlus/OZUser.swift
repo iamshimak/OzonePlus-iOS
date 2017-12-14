@@ -9,6 +9,7 @@
 import UIKit
 
 class OZUser: NSObject {
+    var id : String?
     var firstName : String?
     var lastName : String?
     var fullName : String?
