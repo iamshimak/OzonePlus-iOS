@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ImageCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ImageCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    private var refreshControl: UIRefreshControl!
     
     var images: [OZImage] = []
     
@@ -23,18 +26,14 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
         super.viewDidLoad()
     
         setCollectioViewCellSpacing()
+        setupViews()
         loadImages()
     }
     
-    func loadImages() {
-        DownloadManager.downloadImages(onCompletion: { (images, error) in
-            if images != nil {
-                for img in images! {
-                    self.images.append(img)
-                }
-                self.imageCollectionView.reloadData()
-            }
-        })
+    override func viewWillDisappear(_ animated: Bool) {
+        if refreshControl.isRefreshing {
+            refreshControl.endRefreshing()
+        }
     }
     
     private func setCollectioViewCellSpacing() {
@@ -61,6 +60,38 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
         imageCollectionView?.setCollectionViewLayout(flow, animated: false)
     }
     
+    private func setupViews() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
+        view.sendSubview(toBack: refreshControl)
+        
+        if #available(iOS 10.0, *) {
+            imageCollectionView.refreshControl = refreshControl
+        } else {
+            imageCollectionView.addSubview(refreshControl)
+        }
+    }
+    
+    @objc private func refreshView(refreshControl: UIRefreshControl) {
+        loadImages()
+    }
+    
+    private func loadImages() {
+        DownloadManager.downloadImages(onCompletion: { (images, error) in
+            if images != nil {
+                self.images = []
+                for img in images! {
+                    self.images.append(img)
+                }
+                self.imageCollectionView.reloadData()
+            }
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -74,7 +105,7 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(101) as! UIImageView!
-        imageView?.imageWith(img: images[indexPath.row])
+        imageView?.imageWithColor(img: images[indexPath.row])
         return cell
     }
     
@@ -83,6 +114,24 @@ class ImageCollectionViewController: UIViewController, UICollectionViewDelegate,
         let cell = collectionView.cellForItem(at: indexPath)
         let imageView = cell?.viewWithTag(101) as! UIImageView!
         selectedImage = imageView?.image
+    }
+    
+    // MARK: - SearchBar Delegate
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
     }
     
     // MARK: - Segue

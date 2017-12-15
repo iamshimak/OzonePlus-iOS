@@ -13,6 +13,9 @@
 		C0098C931FCC309100F3BEB2 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0098C921FCC309100F3BEB2 /* UIImageView+ImageLoader.swift */; };
 		C0098C951FCC48D300F3BEB2 /* ImageRepresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0098C941FCC48D200F3BEB2 /* ImageRepresentViewController.swift */; };
 		C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */; };
+		C016E4121FE28B3D00AAA48E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */; };
+		C016E4141FE28DCC00AAA48E /* OZImageble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E4131FE28DCC00AAA48E /* OZImageble.swift */; };
+		C016E4301FE2A6CF00AAA48E /* BrandUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E42F1FE2A6CF00AAA48E /* BrandUIView.swift */; };
 		C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */; };
 		C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83D1FA704BF00168CDA /* UserViewModel.swift */; };
 		C01CF8401FA7053300168CDA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83F1FA7053300168CDA /* UserManager.swift */; };
@@ -54,6 +57,9 @@
 		C0098C921FCC309100F3BEB2 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
 		C0098C941FCC48D200F3BEB2 /* ImageRepresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentViewController.swift; sourceTree = "<group>"; };
 		C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
+		C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		C016E4131FE28DCC00AAA48E /* OZImageble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OZImageble.swift; sourceTree = "<group>"; };
+		C016E42F1FE2A6CF00AAA48E /* BrandUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandUIView.swift; sourceTree = "<group>"; };
 		C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionTableViewController.swift; sourceTree = "<group>"; };
 		C01CF83D1FA704BF00168CDA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C01CF83F1FA7053300168CDA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			children = (
 				C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */,
 				C0098C921FCC309100F3BEB2 /* UIImageView+ImageLoader.swift */,
+				C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C07DC4801FD7BA5C006E9ED1 /* KeyBoardAvoidViewController.swift */,
+				C016E42F1FE2A6CF00AAA48E /* BrandUIView.swift */,
 			);
 			path = BrandComponents;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 				C0B38F271FA0891C009778B7 /* OZUser.swift */,
 				C07DC4831FD82242006E9ED1 /* OZImage.swift */,
 				C0C918D71FDE877600267AA4 /* OZLocalImage.swift */,
+				C016E4131FE28DCC00AAA48E /* OZImageble.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -420,13 +429,16 @@
 				C07DC4811FD7BA5C006E9ED1 /* KeyBoardAvoidViewController.swift in Sources */,
 				C0FC75F91FAAF40500ECA612 /* ProfileView.swift in Sources */,
 				C010A7F11FA870B9000080C2 /* UIStoryboard+Loader.swift in Sources */,
+				C016E4141FE28DCC00AAA48E /* OZImageble.swift in Sources */,
 				C07DC4881FD92129006E9ED1 /* PhotoUploadViewController.swift in Sources */,
 				C08FCF3C1FB57DE7003D14BD /* ImageCollectionViewController.swift in Sources */,
 				C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */,
 				C0B38F281FA0891C009778B7 /* OZUser.swift in Sources */,
 				C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */,
+				C016E4301FE2A6CF00AAA48E /* BrandUIView.swift in Sources */,
 				C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */,
 				C0A2B4141F98A8F30022D66C /* LoginViewController.swift in Sources */,
+				C016E4121FE28B3D00AAA48E /* UIColor+Hex.swift in Sources */,
 				C07DC4841FD82243006E9ED1 /* OZImage.swift in Sources */,
 				C07DC47E1FD7B845006E9ED1 /* SignupViewController.swift in Sources */,
 				C04729831FA74C8900E5B0F7 /* SignupManager.swift in Sources */,

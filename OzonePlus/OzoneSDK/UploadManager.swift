@@ -30,23 +30,36 @@ class UploadManager: NSObject {
         storageRef.putData(image.data!, metadata: metaData) { (metadata, error) in
             if error == nil {
                 image.url = metadata!.downloadURLs!.first
-                updateImageInfo(image: image)
+                updateImageInfo(image: image, onComplete:{ (success, error) in
+                    if success! {
+                        onCompletion("Success", nil)
+                    } else {
+                        onCompletion(nil, error)
+                    }
+                })
+            } else {
+                onCompletion(nil, error)
             }
         }
     }
     
-    static func updateImageInfo(image: OZLocalImage) {
+    static func updateImageInfo(image: OZLocalImage, onComplete:@escaping (_ success :Bool?, _ error :Error?) -> Void) {
         DownloadManager.itemsInDB(onCompletion: { (count: Int?, error) in
-            let ref = databaseRefference()
-            
-            image.name = ref.childByAutoId().key
-            let post = image.ozlocalImage()
-            let childUpdates = ["\(count!.description)" : post]
-            ref.updateChildValues(childUpdates, withCompletionBlock: { (error, ref) in
-                if error != nil {
-                    NSLog(error!.localizedDescription)
-                }
-            })
+            if error == nil {
+                let ref = databaseRefference()
+                image.name = ref.childByAutoId().key
+                let post = image.ozlocalImage()
+                let childUpdates = ["\(count!.description)" : post]
+                ref.updateChildValues(childUpdates, withCompletionBlock: { (error, ref) in
+                    if error != nil {
+                        onComplete(true, nil)
+                    } else {
+                        onComplete(false, error)
+                    }
+                })
+            } else {
+                onComplete(false, error)
+            }
         })
     }
     

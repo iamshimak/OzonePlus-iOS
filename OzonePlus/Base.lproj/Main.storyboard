@@ -577,7 +577,7 @@ LastName</string>
             </objects>
             <point key="canvasLocation" x="2334" y="951"/>
         </scene>
-        <!--Upload-->
+        <!--Gallery-->
         <scene sceneID="UwP-Zt-htN">
             <objects>
                 <viewController id="kNc-0F-mbd" customClass="PhotoUploadViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
@@ -632,7 +632,7 @@ LastName</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nnn-yh-q10"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Upload" id="ReH-BN-odR">
+                    <navigationItem key="navigationItem" title="Gallery" id="ReH-BN-odR">
                         <barButtonItem key="leftBarButtonItem" title="Select" id="FhU-em-5Im">
                             <connections>
                                 <action selector="openGalleryAction:" destination="kNc-0F-mbd" id="ITI-Zx-L6T"/>
@@ -647,7 +647,7 @@ LastName</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="9ne-Ww-G2M" id="OTG-XS-sir"/>
-                        <segue destination="lBf-gS-qoK" kind="show" identifier="showUploadImage" id="sZE-5d-Dgj"/>
+                        <segue destination="lBf-gS-qoK" kind="presentation" identifier="showUploadImage" id="sZE-5d-Dgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3t-NJ-vyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -662,11 +662,19 @@ LastName</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XpV-zj-MNK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Upload" id="cmD-YM-lHS">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="QBo-bk-68v"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcO-Eb-WbH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="548"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OEN-HW-Lj1">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="548"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="568"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -687,15 +695,23 @@ LastName</string>
                                 <state key="normal" title="Upload">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rcO-Eb-WbH" firstAttribute="top" secondItem="jY1-2Y-IH9" secondAttribute="top" id="MEN-60-Gmt"/>
+                            <constraint firstItem="XpV-zj-MNK" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="2mm-CB-9yu"/>
+                            <constraint firstItem="XpV-zj-MNK" firstAttribute="top" secondItem="cYo-XN-Kkl" secondAttribute="top" id="6qJ-DX-bRG"/>
+                            <constraint firstItem="rcO-Eb-WbH" firstAttribute="top" secondItem="XpV-zj-MNK" secondAttribute="bottom" id="GQA-jh-Gw9"/>
                             <constraint firstItem="rcO-Eb-WbH" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="ZP8-1A-1Bb"/>
                             <constraint firstItem="bdF-3Q-xDe" firstAttribute="top" secondItem="rcO-Eb-WbH" secondAttribute="bottom" constant="10" id="cKy-1G-W3q"/>
                             <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="rcO-Eb-WbH" secondAttribute="trailing" id="lnl-Rf-E7z"/>
                             <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="bdF-3Q-xDe" secondAttribute="trailing" constant="10" id="msn-eo-JwJ"/>
+                            <constraint firstItem="XpV-zj-MNK" firstAttribute="trailing" secondItem="jY1-2Y-IH9" secondAttribute="trailing" id="oMz-mz-Dho"/>
                             <constraint firstItem="jY1-2Y-IH9" firstAttribute="bottom" secondItem="bdF-3Q-xDe" secondAttribute="bottom" constant="10" id="rt7-gY-osI"/>
                             <constraint firstItem="bdF-3Q-xDe" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" constant="10" id="wJr-Zn-psj"/>
                         </constraints>
@@ -704,7 +720,7 @@ LastName</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt4-Mp-eNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4522" y="1273"/>
+            <point key="canvasLocation" x="4520.8000000000002" y="1272.4137931034484"/>
         </scene>
         <!--Images-->
         <scene sceneID="SdP-mG-Q2h">
@@ -753,13 +769,16 @@ LastName</string>
                                     <outlet property="delegate" destination="xgd-xn-pSX" id="fIP-ea-bhM"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" placeholder="Search" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRw-65-Aw6">
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="CRw-65-Aw6">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="xgd-xn-pSX" id="Hpy-4G-1NE"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -781,6 +800,7 @@ LastName</string>
                     <tabBarItem key="tabBarItem" title="Images" id="Khc-94-YFw"/>
                     <connections>
                         <outlet property="imageCollectionView" destination="9gT-UL-T14" id="Ha6-vY-C7s"/>
+                        <outlet property="searchBar" destination="CRw-65-Aw6" id="LTe-US-6Ap"/>
                         <outlet property="searchDisplayController" destination="u48-RU-unf" id="wpe-11-moC"/>
                         <segue destination="9zS-d4-I4D" kind="show" identifier="showImageSegue" id="MCg-SC-5au"/>
                     </connections>
@@ -872,6 +892,6 @@ LastName</string>
         <image name="tabbar-profile" width="31" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3sr-Cp-cFq"/>
+        <segue reference="MCg-SC-5au"/>
     </inferredMetricsTieBreakers>
 </document>

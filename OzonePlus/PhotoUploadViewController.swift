@@ -49,13 +49,19 @@ class PhotoUploadViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        
         let img = info[UIImagePickerControllerOriginalImage] as! UIImage
-        selectedImage = OZLocalImage(placeHolderColor: (ColorsFromImage(img, withFlatScheme: true))[0],image:img)
+        self.convertImage(image: img)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func convertImage(image: UIImage) {
+        let data = UIImagePNGRepresentation(image)
+        selectedImage = OZLocalImage(commonColor: (AverageColorFromImage(image)),
+                                     image:image,
+                                     data:data!)
     }
     
     /*

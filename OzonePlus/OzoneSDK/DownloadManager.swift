@@ -50,20 +50,30 @@ class DownloadManager: NSObject {
             
             var ozimgs:Array<OZImage>! = []
             
-            for img in imgs! {
-                let oz = OZImage(dic:img as! Dictionary<String, Any>)
-                ozimgs.append(oz)
+            if imgs != nil && !imgs!.isEmpty {
+                for img in imgs! {
+                    let oz = OZImage(dic:img as! Dictionary<String, Any>)
+                    ozimgs.append(oz)
+                }
+                
+                onCompletion(ozimgs, nil)
+            } else {
+                onCompletion(nil, nil)
             }
             
-            onCompletion(ozimgs, nil)
         })
     }
     
-    static func itemsInDB(onCompletion: @escaping(_ :Int?, _ :Error?) -> Void){
+    static func itemsInDB(onCompletion: @escaping(_ :Int, _ :Error?) -> Void){
         let ref = Database.database().reference(withPath: "images/")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            onCompletion((snapshot.value as? Array<Any>)?.count, nil)
+            let imgs = (snapshot.value as? Array<Any>)?.count
+            if imgs != nil {
+                onCompletion(imgs!, nil)
+            } else {
+                onCompletion(Int(0), nil)
+            }
         })
     }
     
