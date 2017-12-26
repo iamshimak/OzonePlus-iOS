@@ -68,4 +68,8 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
     @objc func emailSigninAction(sender: UIButton) {
         performSegue(withIdentifier: "showEmailSignup", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        dismiss(animated: true, completion: nil)
+    }
 }

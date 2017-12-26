@@ -237,8 +237,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="RqU-YZ-VLd" kind="show" identifier="displaySafariBackground" id="Bvl-8K-B9t"/>
-                        <segue destination="PWh-z9-Ugh" kind="show" identifier="showEmailSignup" id="qgS-xf-Nlv"/>
+                        <segue destination="RqU-YZ-VLd" kind="showDetail" identifier="displaySafariBackground" id="Bvl-8K-B9t"/>
+                        <segue destination="PWh-z9-Ugh" kind="showDetail" identifier="showEmailSignup" id="qgS-xf-Nlv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jUX-gP-UUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -427,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpJ-Vl-HjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1406" y="951"/>
+            <point key="canvasLocation" x="1478" y="950"/>
         </scene>
         <!--Profile-->
         <scene sceneID="iTh-Ue-5T6">
@@ -580,7 +580,7 @@ LastName</string>
         <!--Gallery-->
         <scene sceneID="UwP-Zt-htN">
             <objects>
-                <viewController id="kNc-0F-mbd" customClass="PhotoUploadViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kNc-0F-mbd" customClass="PhotosCollectionViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MOZ-at-Vt5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -647,85 +647,108 @@ LastName</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="9ne-Ww-G2M" id="OTG-XS-sir"/>
-                        <segue destination="lBf-gS-qoK" kind="presentation" identifier="showUploadImage" id="sZE-5d-Dgj"/>
+                        <segue destination="lBf-gS-qoK" kind="presentation" identifier="showUploadImage" id="s2v-Em-kRM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3t-NJ-vyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3614" y="1274"/>
         </scene>
-        <!--View Controller-->
+        <!--Upload-->
         <scene sceneID="iRd-B3-04M">
             <objects>
-                <viewController id="lBf-gS-qoK" sceneMemberID="viewController">
+                <viewController title="Upload" id="lBf-gS-qoK" customClass="PhotoUploadViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cYo-XN-Kkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XpV-zj-MNK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Upload" id="cmD-YM-lHS">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="QBo-bk-68v"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcO-Eb-WbH">
-                                <rect key="frame" x="0.0" y="44" width="375" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7w-c8-BsW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OEN-HW-Lj1">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="568"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ud-KL-GTE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="646"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OEN-HW-Lj1" secondAttribute="bottom" id="94R-G8-rts"/>
-                                    <constraint firstItem="OEN-HW-Lj1" firstAttribute="centerX" secondItem="rcO-Eb-WbH" secondAttribute="centerX" id="Ftv-4z-CIx"/>
-                                    <constraint firstAttribute="trailing" secondItem="OEN-HW-Lj1" secondAttribute="trailing" id="SYd-L9-MWu"/>
-                                    <constraint firstItem="OEN-HW-Lj1" firstAttribute="leading" secondItem="rcO-Eb-WbH" secondAttribute="leading" id="Yff-4c-N8u"/>
-                                    <constraint firstItem="OEN-HW-Lj1" firstAttribute="top" secondItem="rcO-Eb-WbH" secondAttribute="top" id="rT4-sp-rQ8"/>
-                                    <constraint firstItem="OEN-HW-Lj1" firstAttribute="centerY" secondItem="rcO-Eb-WbH" secondAttribute="centerY" id="u6z-ri-QEc"/>
+                                    <constraint firstItem="0ud-KL-GTE" firstAttribute="leading" secondItem="S7w-c8-BsW" secondAttribute="leading" id="K9v-nA-8HX"/>
+                                    <constraint firstItem="0ud-KL-GTE" firstAttribute="centerY" secondItem="S7w-c8-BsW" secondAttribute="centerY" id="RSJ-dQ-VwS"/>
+                                    <constraint firstItem="0ud-KL-GTE" firstAttribute="top" secondItem="S7w-c8-BsW" secondAttribute="top" id="Ruf-im-TPD"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ud-KL-GTE" secondAttribute="bottom" id="Ue0-ME-w6f"/>
+                                    <constraint firstAttribute="trailing" secondItem="0ud-KL-GTE" secondAttribute="trailing" id="b20-iz-OkZ"/>
+                                    <constraint firstItem="0ud-KL-GTE" firstAttribute="centerX" secondItem="S7w-c8-BsW" secondAttribute="centerX" id="kHI-Pm-fnA"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdF-3Q-xDe">
-                                <rect key="frame" x="10" y="622" width="355" height="35"/>
-                                <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNQ-Ev-hFZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Upload" id="0dh-Lv-hdA">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="fM5-CK-S7Y">
+                                            <connections>
+                                                <action selector="backAction:" destination="lBf-gS-qoK" id="PYB-h1-kCC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSa-6c-f1g">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdF-3Q-xDe">
+                                        <rect key="frame" x="10" y="0.0" width="355" height="35"/>
+                                        <color key="backgroundColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Upload">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadAction:" destination="lBf-gS-qoK" eventType="touchUpInside" id="FR8-hj-a1q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="AKD-OR-mC7"/>
+                                    <constraint firstAttribute="height" constant="45" id="Anw-iL-pnT"/>
+                                    <constraint firstAttribute="trailing" secondItem="bdF-3Q-xDe" secondAttribute="trailing" constant="10" id="BUS-yw-qi6"/>
+                                    <constraint firstItem="bdF-3Q-xDe" firstAttribute="top" secondItem="hSa-6c-f1g" secondAttribute="top" id="CkL-1P-07a"/>
+                                    <constraint firstAttribute="bottom" secondItem="bdF-3Q-xDe" secondAttribute="bottom" constant="10" id="gcp-0a-Igk"/>
+                                    <constraint firstItem="bdF-3Q-xDe" firstAttribute="leading" secondItem="hSa-6c-f1g" secondAttribute="leading" constant="10" id="kXV-DT-uTP"/>
                                 </constraints>
-                                <state key="normal" title="Upload">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="XpV-zj-MNK" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="2mm-CB-9yu"/>
-                            <constraint firstItem="XpV-zj-MNK" firstAttribute="top" secondItem="cYo-XN-Kkl" secondAttribute="top" id="6qJ-DX-bRG"/>
-                            <constraint firstItem="rcO-Eb-WbH" firstAttribute="top" secondItem="XpV-zj-MNK" secondAttribute="bottom" id="GQA-jh-Gw9"/>
-                            <constraint firstItem="rcO-Eb-WbH" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="ZP8-1A-1Bb"/>
-                            <constraint firstItem="bdF-3Q-xDe" firstAttribute="top" secondItem="rcO-Eb-WbH" secondAttribute="bottom" constant="10" id="cKy-1G-W3q"/>
-                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="rcO-Eb-WbH" secondAttribute="trailing" id="lnl-Rf-E7z"/>
-                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="bdF-3Q-xDe" secondAttribute="trailing" constant="10" id="msn-eo-JwJ"/>
-                            <constraint firstItem="XpV-zj-MNK" firstAttribute="trailing" secondItem="jY1-2Y-IH9" secondAttribute="trailing" id="oMz-mz-Dho"/>
-                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="bottom" secondItem="bdF-3Q-xDe" secondAttribute="bottom" constant="10" id="rt7-gY-osI"/>
-                            <constraint firstItem="bdF-3Q-xDe" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" constant="10" id="wJr-Zn-psj"/>
+                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="bottom" secondItem="S7w-c8-BsW" secondAttribute="bottom" id="Flp-UA-CXJ"/>
+                            <constraint firstItem="UNQ-Ev-hFZ" firstAttribute="trailing" secondItem="jY1-2Y-IH9" secondAttribute="trailing" id="KTm-ES-kqR"/>
+                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="S7w-c8-BsW" secondAttribute="trailing" id="Mzs-Vk-B03"/>
+                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="trailing" secondItem="hSa-6c-f1g" secondAttribute="trailing" id="Yb3-nt-GsQ"/>
+                            <constraint firstItem="jY1-2Y-IH9" firstAttribute="bottom" secondItem="hSa-6c-f1g" secondAttribute="bottom" id="b4v-l9-iWh"/>
+                            <constraint firstItem="S7w-c8-BsW" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="fQr-zu-JjA"/>
+                            <constraint firstItem="UNQ-Ev-hFZ" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="iKZ-2L-3Ui"/>
+                            <constraint firstItem="hSa-6c-f1g" firstAttribute="leading" secondItem="jY1-2Y-IH9" secondAttribute="leading" id="iZ6-mX-m75"/>
+                            <constraint firstItem="UNQ-Ev-hFZ" firstAttribute="top" secondItem="jY1-2Y-IH9" secondAttribute="top" id="jqt-NT-eaX"/>
+                            <constraint firstItem="S7w-c8-BsW" firstAttribute="top" secondItem="jY1-2Y-IH9" secondAttribute="top" id="jtU-10-7uG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jY1-2Y-IH9"/>
                     </view>
+                    <connections>
+                        <outlet property="imageContainerView" destination="S7w-c8-BsW" id="m0a-lK-kQW"/>
+                        <outlet property="imageView" destination="0ud-KL-GTE" id="Wkg-0o-1GI"/>
+                        <outlet property="navigationBar" destination="UNQ-Ev-hFZ" id="odx-HR-ack"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt4-Mp-eNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="GAH-xw-ZlK">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Upload" id="VV4-Dr-fTQ"/>
+                    </items>
+                </navigationBar>
             </objects>
             <point key="canvasLocation" x="4520.8000000000002" y="1272.4137931034484"/>
         </scene>
         <!--Images-->
         <scene sceneID="SdP-mG-Q2h">
             <objects>
-                <viewController id="xgd-xn-pSX" customClass="ImageCollectionViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xgd-xn-pSX" customClass="HomeViewController" customModule="OzonePlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHC-B6-U9k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,6 +787,11 @@ LastName</string>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="xgd-xn-pSX" id="qCP-H3-IOb"/>
                                     <outlet property="delegate" destination="xgd-xn-pSX" id="fIP-ea-bhM"/>

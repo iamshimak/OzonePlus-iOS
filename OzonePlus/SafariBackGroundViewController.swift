@@ -15,25 +15,22 @@ class SafariBackGroundViewController: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let signinManager = SigninManager()
-        signinManager.signinWithGoogle()
+        GIDSignIn.sharedInstance().uiDelegate = self
+        (SigninManager()).signinWithGoogle()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
         if error == nil {
             isUserSignedIn = true
+            self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
         }
-        
-        self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
     }
 }

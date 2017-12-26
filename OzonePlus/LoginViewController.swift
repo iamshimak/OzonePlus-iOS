@@ -50,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // from iOS 9 it removes observers automatically

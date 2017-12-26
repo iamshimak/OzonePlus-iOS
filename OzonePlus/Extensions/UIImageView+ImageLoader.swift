@@ -42,12 +42,14 @@ extension UIImageView {
     
     func imageWithColor(img: OZImage) {
         image = nil
+        Util.displayActivityIndicatorForImageView(view: self)
         sd_setImage(with: img.url,
                     placeholderImage: getImageWithColor(color: img.commonColor, size: self.frame.size),
                     completed: { (image, error, cashType, reference) in
                         if error == nil {
                             self.image = image
                         }
+                        Util.removeActivityIndicator(forView: self)
         })
     }
     
