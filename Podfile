@@ -1,4 +1,5 @@
 platform :ios, '9.0'
+inhibit_all_warnings!
 
 target 'OzonePlus' do
   use_frameworks!
@@ -7,6 +8,7 @@ target 'OzonePlus' do
   pod 'AFNetworking', '~> 3.0'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Crashlytics', '~> 3.9.3'
+  pod 'PinterestSDK', :git => 'https://github.com/pinterest/ios-pdk.git'
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
@@ -17,4 +19,10 @@ target 'OzonePlus' do
   pod 'GoogleSignIn'
   
   pod 'SDWebImage/WebP'
+  
+  target 'OzonePlusTests' do
+      inherit! :search_paths
+      pod 'Firebase'
+  end
+  
 end

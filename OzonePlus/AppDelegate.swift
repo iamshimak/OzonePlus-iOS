@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import PinterestSDK
 import GoogleSignIn
 
 @UIApplicationMain
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        PDKClient.configureSharedInstance(withAppId: "4940066334422614741")
         
         return true
     }

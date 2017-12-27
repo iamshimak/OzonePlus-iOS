@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F7ECE5B365D6E80BE66F3B4 /* Pods_OzonePlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF4F77CD2DC08A74F76BF815 /* Pods_OzonePlusTests.framework */; };
 		C0098C8F1FCC023A00F3BEB2 /* Gotham Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0098C8C1FCC023900F3BEB2 /* Gotham Bold.otf */; };
 		C0098C901FCC023A00F3BEB2 /* Gotham Bold Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0098C8D1FCC023900F3BEB2 /* Gotham Bold Regular.ttf */; };
 		C0098C911FCC023A00F3BEB2 /* Gotham-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0098C8E1FCC023900F3BEB2 /* Gotham-Medium.otf */; };
@@ -16,6 +17,9 @@
 		C016E4121FE28B3D00AAA48E /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */; };
 		C016E4141FE28DCC00AAA48E /* OZImageble.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E4131FE28DCC00AAA48E /* OZImageble.swift */; };
 		C016E4301FE2A6CF00AAA48E /* BrandUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C016E42F1FE2A6CF00AAA48E /* BrandUIView.swift */; };
+		C01BA4481FF269DE004634BD /* OzonePlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BA4471FF269DE004634BD /* OzonePlusTests.swift */; };
+		C01BA4501FF26A26004634BD /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BA44F1FF26A26004634BD /* AuthenticationTests.swift */; };
+		C01BA4521FF360FF004634BD /* DownloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01BA4511FF360FF004634BD /* DownloadTests.swift */; };
 		C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */; };
 		C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83D1FA704BF00168CDA /* UserViewModel.swift */; };
 		C01CF8401FA7053300168CDA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83F1FA7053300168CDA /* UserManager.swift */; };
@@ -48,7 +52,18 @@
 		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C01BA44A1FF269DE004634BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0A2B3F31F98A7CC0022D66C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0A2B3FA1F98A7CC0022D66C;
+			remoteInfo = OzonePlus;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3656A8B84200D3033B141426 /* Pods-OzonePlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OzonePlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0098C8C1FCC023900F3BEB2 /* Gotham Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham Bold.otf"; sourceTree = "<group>"; };
@@ -60,6 +75,11 @@
 		C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		C016E4131FE28DCC00AAA48E /* OZImageble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OZImageble.swift; sourceTree = "<group>"; };
 		C016E42F1FE2A6CF00AAA48E /* BrandUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandUIView.swift; sourceTree = "<group>"; };
+		C01BA4451FF269DE004634BD /* OzonePlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OzonePlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01BA4471FF269DE004634BD /* OzonePlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OzonePlusTests.swift; sourceTree = "<group>"; };
+		C01BA4491FF269DE004634BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01BA44F1FF26A26004634BD /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		C01BA4511FF360FF004634BD /* DownloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTests.swift; sourceTree = "<group>"; };
 		C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionTableViewController.swift; sourceTree = "<group>"; };
 		C01CF83D1FA704BF00168CDA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C01CF83F1FA7053300168CDA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -93,9 +113,19 @@
 		C0D21F991FD6662200121EEF /* SafariBackGroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariBackGroundViewController.swift; sourceTree = "<group>"; };
 		C0FC75F81FAAF40500ECA612 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
+		DF4E19ED01026093E41628F4 /* Pods-OzonePlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EF4F77CD2DC08A74F76BF815 /* Pods_OzonePlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OzonePlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C01BA4421FF269DE004634BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F7ECE5B365D6E80BE66F3B4 /* Pods_OzonePlusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0A2B3F81F98A7CC0022D66C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -112,6 +142,8 @@
 			children = (
 				7DD5506CDBF37F783F16190F /* Pods-OzonePlus.debug.xcconfig */,
 				D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */,
+				DF4E19ED01026093E41628F4 /* Pods-OzonePlusTests.debug.xcconfig */,
+				3656A8B84200D3033B141426 /* Pods-OzonePlusTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -120,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */,
+				EF4F77CD2DC08A74F76BF815 /* Pods_OzonePlusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,6 +185,17 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		C01BA4461FF269DE004634BD /* OzonePlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				C01BA4471FF269DE004634BD /* OzonePlusTests.swift */,
+				C01BA44F1FF26A26004634BD /* AuthenticationTests.swift */,
+				C01BA4511FF360FF004634BD /* DownloadTests.swift */,
+				C01BA4491FF269DE004634BD /* Info.plist */,
+			);
+			path = OzonePlusTests;
+			sourceTree = "<group>";
+		};
 		C07DC47F1FD7B9A2006E9ED1 /* BrandComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A2B3FD1F98A7CC0022D66C /* OzonePlus */,
+				C01BA4461FF269DE004634BD /* OzonePlusTests */,
 				C0A2B3FC1F98A7CC0022D66C /* Products */,
 				4A7AC7271F4B2F7AEAB8D409 /* Pods */,
 				AE30F352BC8F231A8E0D5BDC /* Frameworks */,
@@ -174,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */,
+				C01BA4451FF269DE004634BD /* OzonePlusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,6 +286,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C01BA4441FF269DE004634BD /* OzonePlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01BA44C1FF269DE004634BD /* Build configuration list for PBXNativeTarget "OzonePlusTests" */;
+			buildPhases = (
+				3D96D5E83E8C95A73D149D65 /* [CP] Check Pods Manifest.lock */,
+				C01BA4411FF269DE004634BD /* Sources */,
+				C01BA4421FF269DE004634BD /* Frameworks */,
+				C01BA4431FF269DE004634BD /* Resources */,
+				6CD3CE4C3F6F267D01D260A3 /* [CP] Embed Pods Frameworks */,
+				C24D0E6B41F8BD826CF79E1E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C01BA44B1FF269DE004634BD /* PBXTargetDependency */,
+			);
+			name = OzonePlusTests;
+			productName = OzonePlusTests;
+			productReference = C01BA4451FF269DE004634BD /* OzonePlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C0A2B3FA1F98A7CC0022D66C /* OzonePlus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0A2B4101F98A7CC0022D66C /* Build configuration list for PBXNativeTarget "OzonePlus" */;
@@ -267,10 +334,15 @@
 		C0A2B3F31F98A7CC0022D66C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Ahamed Shimak";
 				TargetAttributes = {
+					C01BA4441FF269DE004634BD = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C0A2B3FA1F98A7CC0022D66C;
+					};
 					C0A2B3FA1F98A7CC0022D66C = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
@@ -297,11 +369,19 @@
 			projectRoot = "";
 			targets = (
 				C0A2B3FA1F98A7CC0022D66C /* OzonePlus */,
+				C01BA4441FF269DE004634BD /* OzonePlusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C01BA4431FF269DE004634BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0A2B3F91F98A7CC0022D66C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +417,24 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3D96D5E83E8C95A73D149D65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OzonePlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		513FFA76F7024BDCD5B27FE6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,8 +446,10 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PinterestSDK/PinterestSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
@@ -363,6 +463,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinterestSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
@@ -371,6 +473,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CD3CE4C3F6F267D01D260A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C016F2811FC4181B007FA88E /* ShellScript */ = {
@@ -385,6 +507,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"";
+		};
+		C24D0E6B41F8BD826CF79E1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		E93AC8C96F4BFCD27CFB2E7D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -407,6 +544,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C01BA4411FF269DE004634BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C01BA4481FF269DE004634BD /* OzonePlusTests.swift in Sources */,
+				C01BA4501FF26A26004634BD /* AuthenticationTests.swift in Sources */,
+				C01BA4521FF360FF004634BD /* DownloadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C0A2B3F71F98A7CC0022D66C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,6 +594,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C01BA44B1FF269DE004634BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0A2B3FA1F98A7CC0022D66C /* OzonePlus */;
+			targetProxy = C01BA44A1FF269DE004634BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C0A2B4021F98A7CC0022D66C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -467,6 +622,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C01BA44D1FF269DE004634BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF4E19ED01026093E41628F4 /* Pods-OzonePlusTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				INFOPLIST_FILE = OzonePlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OzonePlus.app/OzonePlus";
+			};
+			name = Debug;
+		};
+		C01BA44E1FF269DE004634BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3656A8B84200D3033B141426 /* Pods-OzonePlusTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5UZB9D8Q96;
+				INFOPLIST_FILE = OzonePlusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sk.OzonePlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OzonePlus.app/OzonePlus";
+			};
+			name = Release;
+		};
 		C0A2B40E1F98A7CC0022D66C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -622,6 +813,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C01BA44C1FF269DE004634BD /* Build configuration list for PBXNativeTarget "OzonePlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01BA44D1FF269DE004634BD /* Debug */,
+				C01BA44E1FF269DE004634BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C0A2B3F61F98A7CC0022D66C /* Build configuration list for PBXProject "OzonePlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

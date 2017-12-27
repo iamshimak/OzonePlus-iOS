@@ -14,6 +14,8 @@ class PhotosCollectionViewController: UIViewController, UIImagePickerControllerD
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let imageCell = "galleryImageCell"
+    private let photoUploadSegue = "showUploadImage"
+    
     private var selectedImage: OZLocalImage? = nil
     
     override func viewDidLoad() {
@@ -22,17 +24,13 @@ class PhotosCollectionViewController: UIViewController, UIImagePickerControllerD
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK:
     
     @IBAction func imageSelectedAction(_ sender: Any) {
         if selectedImage != nil {
-            Util.displayActivityIndicator()
-            UploadManager.uploadImage(image: selectedImage!, onCompletion: { (status, error) in
-                Util.removeActivityIndicator()
-            })
+            performSegue(withIdentifier: photoUploadSegue, sender: self)
         }
     }
     
@@ -62,6 +60,15 @@ class PhotosCollectionViewController: UIViewController, UIImagePickerControllerD
         selectedImage = OZLocalImage(commonColor: (AverageColorFromImage(image)),
                                      image:image,
                                      data:data!)
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == photoUploadSegue {
+            let vc = segue.destination as! PhotoUploadViewController
+            vc.uploadImage = selectedImage
+        }
     }
     
     /*

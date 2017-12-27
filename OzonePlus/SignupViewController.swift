@@ -40,22 +40,29 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK:
+    @IBAction func cancelAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func signupAction(_ sender: Any) {
         dismissKeyboard()
         Util.displayActivityIndicator()
         
+        let user = SignupManager.SignupUser(firstName: "",
+                                            lastName: "",
+                                            email: emailTextField.text!.trimmingCharacters(in: .whitespaces),
+                                            password: passwordTextField.text!.trimmingCharacters(in: .whitespaces))
+        
         let manager = SignupManager()
-        manager.signupWith(email: emailTextField.text!.trimmingCharacters(in: .whitespaces),
-                           password: passwordTextField.text!.trimmingCharacters(in: .whitespaces),
-                           onCompletion: { (success, error) in
-                            
-                            Util.removeActivityIndicator()
-                            if error == nil {
-                                self.isUserSignedIn = true
-                                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
-                            }
-        })
+        manager.signupWith(signupUser: user) { (response, error) in
+            
+            Util.removeActivityIndicator()
+            if error == nil {
+                self.isUserSignedIn = true
+                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
+            }
+            
+        }
     }
     
     // MARK:

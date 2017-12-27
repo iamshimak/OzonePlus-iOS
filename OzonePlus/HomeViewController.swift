@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PinterestSDK
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -28,6 +29,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setCollectioViewCellSpacing()
         setupViews()
         loadImages()
+        
+        PDKClient.sharedInstance().getPath("hello", parameters: nil, withSuccess: { response in
+            NSLog(response!.description)
+        }, andFailure: { error in
+            NSLog(error!.localizedDescription)
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
