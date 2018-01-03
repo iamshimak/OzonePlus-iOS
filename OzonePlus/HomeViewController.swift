@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FlickrKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -16,7 +15,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     private var refreshControl: UIRefreshControl!
     
-    var images: [OZImage] = []
+    var imageURLs: [URL] = []
     
     private let imageViewSegue = "showImageSegue"
     
@@ -29,19 +28,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setCollectioViewCellSpacing()
         setupViews()
         loadImages()
-        
-        FlickrKit.shared().initialize(withAPIKey: "430e2c659ed0363280910b45acd4b043", sharedSecret: "a8cfe3a3a0e73b43")
-        let flickrInteresting = FKFlickrInterestingnessGetList()
-        flickrInteresting.per_page = "15"
-        FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
-            if let res = response {
-                let topPhotos = res["photos"] as! [String: AnyObject]
-                let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
-                for photoDictionary in photoArray {
-                    let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small320, fromPhotoDictionary: photoDictionary)
-                }
-            }
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,12 +87,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         view.addGestureRecognizer(tap);
     }
     
-    private func loadImages() {
-        DownloadManager.downloadImages(onCompletion: { (images, error) in
-            if images != nil {
-                self.images = []
-                for img in images! {
-                    self.images.append(img)
+    private func loadImages() {        
+        DownloadManager.downloadHomeScreenImages(completion: { (urls, error) in
+            if urls != nil {
+                self.imageURLs = []
+                for url in urls! {
+                    self.imageURLs.append(url)
                 }
                 self.imageCollectionView.reloadData()
             }
@@ -124,13 +110,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: - CollectionView Delegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return imageURLs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
         let imageView = cell.viewWithTag(101) as! UIImageView!
-        imageView?.imageWithColor(img: images[indexPath.row])
+        imageView!.imageWith(url: imageURLs[indexPath.row])
         return cell
     }
     

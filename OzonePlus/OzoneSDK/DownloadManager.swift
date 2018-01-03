@@ -7,6 +7,7 @@
 //
 
 import Firebase
+import FlickrKit
 import Foundation
 import AFNetworking
 import FirebaseDatabase
@@ -52,7 +53,7 @@ class DownloadManager: NSObject {
             
             if imgs != nil && !imgs!.isEmpty {
                 for img in imgs! {
-                    let oz = OZImage(dic:img as! Dictionary<String, Any>)
+                    let oz = OZImage(dic:img as! [String:Any])
                     ozimgs.append(oz)
                 }
                 
@@ -62,6 +63,29 @@ class DownloadManager: NSObject {
             }
             
         })
+    }
+    
+    static func downloadHomeScreenImages(completion: @escaping(_ : [URL]?, _ : Error?) -> Void) {
+        let flickrInteresting = FKFlickrInterestingnessGetList()
+        flickrInteresting.per_page = "15"
+        FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
+            DispatchQueue.main.async {
+                if let res = response {
+                    let topPhotos = res["photos"] as! [String: AnyObject]
+                    let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                    
+                    var urls = [URL]()
+                    for photoDictionary in photoArray {
+                        let url = FlickrKit.shared().photoURL(for: FKPhotoSize.small320, fromPhotoDictionary: photoDictionary)
+                        urls.append(url)
+                    }
+                    
+                    completion(urls, nil)
+                } else {
+                    completion(nil, error)
+                }
+            }
+        }
     }
     
     static func itemsInDB(onCompletion: @escaping(_ :Int, _ :Error?) -> Void){

@@ -50,8 +50,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     private func setupViews() {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
-        view.addSubview(refreshControl)
-        view.sendSubview(toBack: refreshControl)
+        
+        if #available(iOS 10.0, *) {
+            imageCollectionView.refreshControl = refreshControl
+        } else {
+            imageCollectionView.addSubview(refreshControl)
+        }
+        
+        imageCollectionView.sendSubview(toBack: refreshControl)
     }
     
     @objc private func refreshView(refreshControl: UIRefreshControl) {

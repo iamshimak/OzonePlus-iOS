@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import FlickrKit
 import GoogleSignIn
 
 @UIApplicationMain
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        FlickrKit.shared().initialize(withAPIKey: "430e2c659ed0363280910b45acd4b043", sharedSecret: "a8cfe3a3a0e73b43")
         
         return true
     }
