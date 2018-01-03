@@ -70,6 +70,6 @@ class SigninOptionTableViewController: UITableViewController, GIDSignInUIDelegat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
     }
 }

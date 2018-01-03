@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     private var isKeyBoardShown = false
     private var signInCredentials: NSDictionary!
     
-    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
+    var slideInTransitioningDelegate = SlideInPresentationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

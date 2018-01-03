@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PinterestSDK
+import FlickrKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
@@ -30,11 +30,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setupViews()
         loadImages()
         
-        PDKClient.sharedInstance().getPath("hello", parameters: nil, withSuccess: { response in
-            NSLog(response!.description)
-        }, andFailure: { error in
-            NSLog(error!.localizedDescription)
-        })
+        FlickrKit.shared().initialize(withAPIKey: "430e2c659ed0363280910b45acd4b043", sharedSecret: "a8cfe3a3a0e73b43")
+        let flickrInteresting = FKFlickrInterestingnessGetList()
+        flickrInteresting.per_page = "15"
+        FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
+            if let res = response {
+                let topPhotos = res["photos"] as! [String: AnyObject]
+                let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
+                for photoDictionary in photoArray {
+                    let photoURL = FlickrKit.shared().photoURL(for: FKPhotoSize.small320, fromPhotoDictionary: photoDictionary)
+                }
+            }
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,7 +77,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     private func setupViews() {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
-        view.sendSubview(toBack: refreshControl)
         
         if #available(iOS 10.0, *) {
             imageCollectionView.refreshControl = refreshControl
@@ -78,6 +84,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             imageCollectionView.addSubview(refreshControl)
         }
         
+        imageCollectionView.sendSubview(toBack: refreshControl)
         addKeyboardDismissToTapView()
     }
     

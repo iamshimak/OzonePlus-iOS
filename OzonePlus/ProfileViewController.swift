@@ -13,15 +13,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    private var refreshControl: UIRefreshControl!
 
     private var imageCollection: [OZImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeAppSettings()
+        setupViews()
+        setCollectioViewCellSpacing()
         updateProfilePic()
         loadImages()
-        initializeAppSettings()
-        setCollectioViewCellSpacing()
     }
     
     @IBAction func profilePicSelected(_ sender: Any) {
@@ -34,6 +37,50 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     // MARK: -
+    
+    private func initializeAppSettings() {
+        let user = UserManager.sharedInstance.currentUser()
+        if user.fullName?.count != 0 {
+            nameLabel.text = user.fullName
+        } else {
+            nameLabel.text = "\(user.firstName!)\n\(user.lastName!)"
+        }
+    }
+    
+    private func setupViews() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshView), for: .valueChanged)
+        view.addSubview(refreshControl)
+        view.sendSubview(toBack: refreshControl)
+    }
+    
+    @objc private func refreshView(refreshControl: UIRefreshControl) {
+        loadImages()
+    }
+    
+    private func setCollectioViewCellSpacing() {
+        // Create flow layout
+        let flow = UICollectionViewFlowLayout()
+        
+        // Define layout constants
+        let itemSpacing: CGFloat = 1.0
+        let collectionViewWidth = self.view.bounds.size.width
+        let itemsInOneLine: CGFloat = 3.0
+        
+        // Calculate other required constants
+        let width: CGFloat = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
+        let cellWidth = width / itemsInOneLine
+        let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
+        
+        // Apply values
+        flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flow.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        flow.minimumInteritemSpacing = realItemSpacing
+        flow.minimumLineSpacing = realItemSpacing
+        
+        // Apply flow layout
+        imageCollectionView?.setCollectionViewLayout(flow, animated: false)
+    }
     
     func updateProfilePic() {
         let url : URL? = UserManager.sharedInstance.currentUser().profilePic
@@ -67,39 +114,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
                 
             }
         })
-    }
-    
-    private func initializeAppSettings() {
-        let user = UserManager.sharedInstance.currentUser()
-        if user.fullName?.count != 0 {
-            nameLabel.text = user.fullName
-        } else {
-            nameLabel.text = "\(user.firstName!)\n\(user.lastName!)"
-        }
-    }
-    
-    private func setCollectioViewCellSpacing() {
-        // Create flow layout
-        let flow = UICollectionViewFlowLayout()
-        
-        // Define layout constants
-        let itemSpacing: CGFloat = 1.0
-        let collectionViewWidth = self.view.bounds.size.width
-        let itemsInOneLine: CGFloat = 3.0
-        
-        // Calculate other required constants
-        let width: CGFloat = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
-        let cellWidth = width / itemsInOneLine
-        let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
-        
-        // Apply values
-        flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flow.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        flow.minimumInteritemSpacing = realItemSpacing
-        flow.minimumLineSpacing = realItemSpacing
-        
-        // Apply flow layout
-        imageCollectionView?.setCollectionViewLayout(flow, animated: false)
     }
     
     // MARK: - CollectionView DataSource

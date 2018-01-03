@@ -8,7 +8,7 @@ target 'OzonePlus' do
   pod 'AFNetworking', '~> 3.0'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'Crashlytics', '~> 3.9.3'
-  pod 'PinterestSDK', :git => 'https://github.com/pinterest/ios-pdk.git'
+  pod 'FlickrKit'
 
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
