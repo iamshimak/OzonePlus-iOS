@@ -67,7 +67,7 @@ class DownloadManager: NSObject {
     
     static func downloadHomeScreenImages(completion: @escaping(_ : [URL]?, _ : Error?) -> Void) {
         let flickrInteresting = FKFlickrInterestingnessGetList()
-        flickrInteresting.per_page = "15"
+        flickrInteresting.per_page = "50"
         FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
             DispatchQueue.main.async {
                 if let res = response {
@@ -76,7 +76,7 @@ class DownloadManager: NSObject {
                     
                     var urls = [URL]()
                     for photoDictionary in photoArray {
-                        let url = FlickrKit.shared().photoURL(for: FKPhotoSize.small320, fromPhotoDictionary: photoDictionary)
+                        let url = FlickrKit.shared().photoURL(for: FKPhotoSize.medium640, fromPhotoDictionary: photoDictionary)
                         urls.append(url)
                     }
                     

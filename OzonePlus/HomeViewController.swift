@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -18,14 +18,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var imageURLs: [URL] = []
     
     private let imageViewSegue = "showImageSegue"
+    fileprivate let loadingCellIdentifier = "loadingCell"
+    fileprivate let imageCellIdentifier = "imageCell"
     
     private var selectedImageIndex: Int = -1
     private var selectedImage: UIImage? = nil
     
+    fileprivate let imageCellInsets = UIEdgeInsets(top: 1.0, left: 1.0, bottom: 1.0, right: 1.0)
+    fileprivate let imagesPerRow: CGFloat = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        setCollectioViewCellSpacing()
         setupViews()
         loadImages()
     }
@@ -34,30 +38,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if refreshControl.isRefreshing {
             refreshControl.endRefreshing()
         }
-    }
-
-    private func setCollectioViewCellSpacing() {
-        // Create flow layout
-        let flow = UICollectionViewFlowLayout()
-        
-        // Define layout constants
-        let itemSpacing: CGFloat = 1.0
-        let collectionViewWidth = self.view.bounds.size.width
-        let itemsInOneLine: CGFloat = 3.0
-        
-        // Calculate other required constants
-        let width: CGFloat = collectionViewWidth - itemSpacing * (itemsInOneLine - 1)
-        let cellWidth = width / itemsInOneLine
-        let realItemSpacing = itemSpacing + (width / itemsInOneLine - cellWidth) * itemsInOneLine / (itemsInOneLine - 1)
-        
-        // Apply values
-        flow.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flow.itemSize = CGSize(width: cellWidth, height: cellWidth)
-        flow.minimumInteritemSpacing = realItemSpacing
-        flow.minimumLineSpacing = realItemSpacing
-        
-        // Apply flow layout
-        imageCollectionView?.setCollectionViewLayout(flow, animated: false)
     }
     
     private func setupViews() {
@@ -107,26 +87,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: - CollectionView Delegate
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURLs.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath)
-        let imageView = cell.viewWithTag(101) as! UIImageView!
-        imageView!.imageWith(url: imageURLs[indexPath.row])
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedImageIndex = indexPath.row
-        let cell = collectionView.cellForItem(at: indexPath)
-        let imageView = cell?.viewWithTag(101) as! UIImageView!
-        selectedImage = imageView?.image
-    }
-    
     // MARK: - SearchBar Delegate
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -157,14 +117,69 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+}
+
+extension HomeViewController:  UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        
+        return imageURLs.count + 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.count < imageURLs.count {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageCellIdentifier,
+                                                          for: indexPath)
+            let imageView = cell.viewWithTag(101) as! UIImageView!
+            imageView!.imageWith(url: imageURLs[indexPath.row])
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: loadingCellIdentifier,
+                                                          for: indexPath)
+            return cell;
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedImageIndex = indexPath.row
+        let cell = collectionView.cellForItem(at: indexPath)
+        let imageView = cell?.viewWithTag(101) as! UIImageView!
+        selectedImage = imageView?.image
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.row < imageURLs.count {
+            let paddingSpace = imageCellInsets.left * (imagesPerRow + 1)
+            let availableWidth = view.frame.width - paddingSpace
+            let widthPerItem = availableWidth / imagesPerRow
+            
+            return CGSize(width: widthPerItem, height: widthPerItem)
+            
+        } else {
+            return CGSize(width: view.frame.width, height: 40.0)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return imageCellInsets
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return imageCellInsets.left
+    }
     
 }

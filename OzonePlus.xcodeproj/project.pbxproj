@@ -23,6 +23,7 @@
 		C01CF83C1FA6EB1D00168CDA /* SigninOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */; };
 		C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83D1FA704BF00168CDA /* UserViewModel.swift */; };
 		C01CF8401FA7053300168CDA /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01CF83F1FA7053300168CDA /* UserManager.swift */; };
+		C02AB3F62036FE4900EEA9F7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02AB3F52036FE4900EEA9F7 /* UIColor.swift */; };
 		C035B71D1FB08F1E0013CCE9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C035B71C1FB08F1E0013CCE9 /* ProfileViewController.swift */; };
 		C04729801FA744B200E5B0F7 /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */; };
 		C04729811FA744B200E5B0F7 /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */; };
@@ -83,6 +84,7 @@
 		C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninOptionTableViewController.swift; sourceTree = "<group>"; };
 		C01CF83D1FA704BF00168CDA /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C01CF83F1FA7053300168CDA /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		C02AB3F52036FE4900EEA9F7 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C035B71C1FB08F1E0013CCE9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C047297E1FA744B100E5B0F7 /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
 		C047297F1FA744B100E5B0F7 /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				C010A7F01FA870B9000080C2 /* UIStoryboard+Loader.swift */,
 				C0098C921FCC309100F3BEB2 /* UIImageView+ImageLoader.swift */,
 				C016E4111FE28B3D00AAA48E /* UIColor+Hex.swift */,
+				C02AB3F52036FE4900EEA9F7 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				C0D21F9A1FD6662200121EEF /* SafariBackGroundViewController.swift in Sources */,
 				C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */,
 				C01CF83E1FA704BF00168CDA /* UserViewModel.swift in Sources */,
+				C02AB3F62036FE4900EEA9F7 /* UIColor.swift in Sources */,
 				C0098C951FCC48D300F3BEB2 /* ImageRepresentViewController.swift in Sources */,
 				C0A2B3FF1F98A7CC0022D66C /* AppDelegate.swift in Sources */,
 				C0B38F241FA06801009778B7 /* SigninManager.swift in Sources */,
