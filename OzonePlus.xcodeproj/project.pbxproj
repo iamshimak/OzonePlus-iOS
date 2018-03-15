@@ -49,6 +49,7 @@
 		C0B38F2A1FA09AA0009778B7 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B38F291FA09AA0009778B7 /* Util.swift */; };
 		C0C918D81FDE877600267AA4 /* OZLocalImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C918D71FDE877600267AA4 /* OZLocalImage.swift */; };
 		C0D21F9A1FD6662200121EEF /* SafariBackGroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D21F991FD6662200121EEF /* SafariBackGroundViewController.swift */; };
+		C0DABD2D205A5AFE00E51D3E /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DABD2C205A5AFE00E51D3E /* ImageCollectionViewCell.swift */; };
 		C0FC75F91FAAF40500ECA612 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FC75F81FAAF40500ECA612 /* ProfileView.swift */; };
 		C8F6CF4D349BE1B0A5A9C6B5 /* Pods_OzonePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D5D90533DD7F8611AE9C5D /* Pods_OzonePlus.framework */; };
 /* End PBXBuildFile section */
@@ -96,7 +97,7 @@
 		C07DC4871FD92129006E9ED1 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		C08EDB6C1FA9D5CB00ABE808 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C08EDB6E1FA9D6F500ABE808 /* PersistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistManager.swift; sourceTree = "<group>"; };
-		C08EDB701FA9D71A00ABE808 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		C08EDB701FA9D71A00ABE808 /* DownloadManager.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; tabWidth = 4; };
 		C08FCF3B1FB57DE7003D14BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C091F8231FE3E6450055B172 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		C0A2B3FB1F98A7CC0022D66C /* OzonePlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzonePlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +114,7 @@
 		C0B38F291FA09AA0009778B7 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		C0C918D71FDE877600267AA4 /* OZLocalImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OZLocalImage.swift; sourceTree = "<group>"; };
 		C0D21F991FD6662200121EEF /* SafariBackGroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariBackGroundViewController.swift; sourceTree = "<group>"; };
+		C0DABD2C205A5AFE00E51D3E /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C0FC75F81FAAF40500ECA612 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D389315F34B88735713364B5 /* Pods-OzonePlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlus.release.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlus/Pods-OzonePlus.release.xcconfig"; sourceTree = "<group>"; };
 		DF4E19ED01026093E41628F4 /* Pods-OzonePlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OzonePlusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OzonePlusTests/Pods-OzonePlusTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				C0B38F261FA088ED009778B7 /* Models */,
 				C07DC47F1FD7B9A2006E9ED1 /* BrandComponents */,
 				C01CF83F1FA7053300168CDA /* UserManager.swift */,
+				C0DABD2E205A7D3600E51D3E /* ViewControllers */,
 				C0A2B4021F98A7CC0022D66C /* Main.storyboard */,
 				C0A2B3FE1F98A7CC0022D66C /* AppDelegate.swift */,
 				C0A2B4081F98A7CC0022D66C /* Assets.xcassets */,
@@ -246,6 +249,7 @@
 				C08FCF3B1FB57DE7003D14BD /* HomeViewController.swift */,
 				C091F8231FE3E6450055B172 /* PhotoUploadViewController.swift */,
 				C0098C941FCC48D200F3BEB2 /* ImageRepresentViewController.swift */,
+				C0DABD2C205A5AFE00E51D3E /* ImageCollectionViewCell.swift */,
 				C01CF83B1FA6EB1D00168CDA /* SigninOptionTableViewController.swift */,
 				C07DC47D1FD7B845006E9ED1 /* SignupViewController.swift */,
 				C0D21F991FD6662200121EEF /* SafariBackGroundViewController.swift */,
@@ -284,6 +288,13 @@
 				C016E4131FE28DCC00AAA48E /* OZImageble.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		C0DABD2E205A7D3600E51D3E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +582,7 @@
 				C091F8241FE3E6450055B172 /* PhotoUploadViewController.swift in Sources */,
 				C07DC4861FD9205D006E9ED1 /* UploadManager.swift in Sources */,
 				C035B71D1FB08F1E0013CCE9 /* ProfileViewController.swift in Sources */,
+				C0DABD2D205A5AFE00E51D3E /* ImageCollectionViewCell.swift in Sources */,
 				C08EDB6F1FA9D6F500ABE808 /* PersistManager.swift in Sources */,
 				C0A2B4071F98A7CC0022D66C /* OzonePlus.xcdatamodeld in Sources */,
 				C0C918D81FDE877600267AA4 /* OZLocalImage.swift in Sources */,

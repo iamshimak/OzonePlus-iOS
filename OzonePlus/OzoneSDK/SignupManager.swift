@@ -35,16 +35,14 @@ class SignupManager: NSObject {
     
     func signupWith(signupUser: SignupUser, onCompletion:@escaping (_ : String?, _ : Error?) -> Void) {
         
-        Auth.auth().createUser(withEmail: signupUser.email,
-                               password: signupUser.password,
-                               completion: { (user,error) in
-                                
-            if error == nil {
+        Auth.auth().createUser(withEmail: signupUser.email, password: signupUser.password, completion: { user, error in
+            
+            if let user == user {
                 
-                let ref = Database.database().reference().child("users/\(user!.uid)/")
+                let ref = Database.database().reference().child("users/\(user.uid)/")
                 let values = ["firstName" : signupUser.firstName,
-                               "lastName" : signupUser.lastName,
-                               "givenName" : signupUser.firstName + signupUser.lastName]
+                              "lastName" : signupUser.lastName,
+                              "givenName" : signupUser.firstName + signupUser.lastName]
                 
                 ref.updateChildValues(values, withCompletionBlock: { (error, ref) in
                     if error == nil {
@@ -58,7 +56,7 @@ class SignupManager: NSObject {
             } else {
                 onCompletion(nil, error)
             }
-                                
+            
         })
         
     }

@@ -11,34 +11,6 @@ import UIKit
 class ProfileView: UIView, UIImagePickerControllerDelegate {
     
     private var coverImage : UIImageView!
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//
-//        coverImage = UIImageView.init(frame: frame)
-//        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(pickImageToUpload))
-//        
-//        coverImage.addGestureRecognizer(tapGesture)
-//        addSubview(coverImage)
-//
-//        Util.displayActivityIndicatorForImageView(view: self)
-//
-//        DownloadManager.downloadImage(fromUrl: UserManager.sharedInstance.currentUser().profilePic!, onCompletion: { (image, error) in
-//            if image != nil {
-//                self.coverImage.image = image
-//            } else {
-//
-//            }
-//        })
-//    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

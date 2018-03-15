@@ -57,10 +57,10 @@ extension UIImageView {
         sd_setImage(with: url,
                     placeholderImage: nil,
                     completed: { (image, error, cashType, reference) in
+                        Util.removeActivityIndicator(forView: self)
                         if error == nil {
                             self.image = image
                         }
-                        Util.removeActivityIndicator(forView: self)
         })
     }
     

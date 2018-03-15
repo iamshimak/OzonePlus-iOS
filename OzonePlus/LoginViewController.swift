@@ -70,36 +70,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        dismissKeyboard()
+        Util.displayActivityIndicator()
         
-        let urlString = URL(string: "https://itunes.apple.com/search?media=music&entity=song&term=swift")
-        if let url = urlString {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error?.localizedDescription)
-                } else {
-                    if let usableData = data {
-                        print(usableData) //JSONSerialization
-                    }
-                }
+        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
+        let signinManager = SigninManager()
+        
+        signinManager.signinUser(signinUser: user) { (res, error) in
+            Util.removeActivityIndicator()
+            if error != nil {
+                
+            } else {
+                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
             }
-            
-            task.resume()
         }
-        
-        //        dismissKeyboard()
-        //        Util.displayActivityIndicator()
-        //
-        //        let user = SigninManager.SigninUser(username: emailTextField.text!, password: passwordTextField.text!)
-        //        let signinManager = SigninManager()
-        //
-        //        signinManager.signinUser(signinUser: user) { (res, error) in
-        //            Util.removeActivityIndicator()
-        //            if error != nil {
-        //
-        //            } else {
-        //                self.showDetailViewController(UIStoryboard.loadTabBarViewController(), sender: nil)
-        //            }
-        //        }
         
     }
     

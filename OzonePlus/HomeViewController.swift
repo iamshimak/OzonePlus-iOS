@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UISearchBarDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -71,9 +71,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UISearchBa
         DownloadManager.downloadHomeScreenImages(completion: { (urls, error) in
             if urls != nil {
                 self.imageURLs = []
-                for url in urls! {
-                    self.imageURLs.append(url)
-                }
+                self.imageURLs = urls!
                 self.imageCollectionView.reloadData()
             }
             
@@ -130,11 +128,10 @@ extension HomeViewController:  UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.count < imageURLs.count {
+        if indexPath.row < imageURLs.count {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: imageCellIdentifier,
-                                                          for: indexPath)
-            let imageView = cell.viewWithTag(101) as! UIImageView!
-            imageView!.imageWith(url: imageURLs[indexPath.row])
+                                                          for: indexPath) as! ImageCollectionViewCell
+            cell.configureCell(url: imageURLs[indexPath.row])
             return cell
             
         } else {
@@ -166,7 +163,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: widthPerItem, height: widthPerItem)
             
         } else {
-            return CGSize(width: view.frame.width, height: 40.0)
+            return CGSize(width: view.frame.width, height: 60.0)
         }
     }
 

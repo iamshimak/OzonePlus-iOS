@@ -46,21 +46,23 @@ class DownloadManager: NSObject {
     static func downloadImages(onCompletion: @escaping(_ : Array<OZImage>?, _ : Error?) -> Void) {
         let ref = Database.database().reference(withPath: "images/")
         
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let imgs = snapshot.value as? Array<Any>
+        ref.observeSingleEvent(of: .value, with: { snapshot in
             
-            var ozimgs:Array<OZImage>! = []
-            
-            if imgs != nil && !imgs!.isEmpty {
-                for img in imgs! {
-                    let oz = OZImage(dic:img as! [String:Any])
-                    ozimgs.append(oz)
-                }
-                
-                onCompletion(ozimgs, nil)
-            } else {
-                onCompletion(nil, nil)
+            guard let images = snapshot.value as? [Any],
+                !images.isEmpty else {
+                    onCompletion(nil, nil)
+                    return
             }
+            
+            let ozImages = images.flatMap({ (image) -> OZImage? in
+                if let image = image as? [String:Any] {
+                    return OZImage(dic:image)
+                } else {
+                    return nil
+                }
+            })
+            
+            onCompletion(ozImages, nil)
             
         })
     }
@@ -70,20 +72,18 @@ class DownloadManager: NSObject {
         flickrInteresting.per_page = "50"
         FlickrKit.shared().call(flickrInteresting) { (response, error) -> Void in
             DispatchQueue.main.async {
-                if let res = response {
-                    let topPhotos = res["photos"] as! [String: AnyObject]
-                    let photoArray = topPhotos["photo"] as! [[NSObject: AnyObject]]
-                    
-                    var urls = [URL]()
-                    for photoDictionary in photoArray {
-                        let url = FlickrKit.shared().photoURL(for: FKPhotoSize.medium640, fromPhotoDictionary: photoDictionary)
-                        urls.append(url)
-                    }
-                    
-                    completion(urls, nil)
-                } else {
-                    completion(nil, error)
+                guard let response = response,
+                    let topPhotos = response["photos"] as? [String: AnyObject],
+                    let photoArray = topPhotos["photo"] as? [[NSObject: AnyObject]] else {
+                        completion(nil, error)
+                        return
                 }
+                
+                let urls = photoArray.flatMap({ (photoDictionary) -> URL? in
+                    return FlickrKit.shared().photoURL(for: FKPhotoSize.medium640, fromPhotoDictionary: photoDictionary)
+                })
+                
+                completion(urls, nil)
             }
         }
     }
@@ -92,6 +92,7 @@ class DownloadManager: NSObject {
         let ref = Database.database().reference(withPath: "images/")
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
+
             let imgs = (snapshot.value as? Array<Any>)?.count
             if imgs != nil {
                 onCompletion(imgs!, nil)
