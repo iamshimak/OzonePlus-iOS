@@ -10,9 +10,9 @@ import UIKit
 import Foundation
 
 protocol OZImageble {
-    var name: String! { get set }
+    var oz_name: String! { get set }
     var size: CGSize! { get set }
-    var url: URL! { get set }
+    var oz_url: URL! { get set }
     var commonColor: UIColor! { get set }
     var type: String! { get set }
 }
