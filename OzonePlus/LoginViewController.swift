@@ -132,7 +132,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
     }
     
     func isTextFieldsEmpty() -> Bool {
-        return emailTextField.text!.count == 0 || passwordTextField.text!.count == 0
+        return emailTextField.text!.count == 0 
+		|| passwordTextField.text!.count == 0
     }
     
     // MARK: - Keyboard Notification
@@ -195,9 +196,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIActionSheetD
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         loginButton.setTitleColor(UIColor.lightGray, for: .disabled)
-        loginButton.layer.cornerRadius = 5
+        loginButton.layer.cornerRadius = 4
         
-        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderWidth = 0.5
         signUpButton.layer.borderColor = UIColor.flatSkyBlue.cgColor
         signUpButton.layer.cornerRadius = 5
     }
